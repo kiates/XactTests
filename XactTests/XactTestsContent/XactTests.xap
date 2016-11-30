@@ -215,6 +215,23 @@ Global Settings
         Max = 1000000.000000;
     }
 
+    Variable
+    {
+        Name = MyVariable1;
+        Public = 1;
+        Global = 0;
+        Internal = 0;
+        External = 0;
+        Monitored = 1;
+        Reserved = 0;
+        Read Only = 0;
+        Time = 0;
+        Value = 0.000000;
+        Initial Value = 0.000000;
+        Min = 0.000000;
+        Max = 100.000000;
+    }
+
     RPC
     {
         Name = RPC Preset 1;
@@ -241,7 +258,7 @@ Global Settings
 
             RPC Point
             {
-                X = 1000.000000;
+                X = 2000.000000;
                 Y = 0.000000;
                 Curve = 0;
             }
@@ -269,7 +286,7 @@ Global Settings
 
             RPC Point
             {
-                X = 1000.000000;
+                X = 2000.000000;
                 Y = -9600.000000;
                 Curve = 0;
             }
@@ -286,8 +303,8 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
-    Bank Last Revised Low = 1464326989;
-    Bank Last Revised High = 30557454;
+    Bank Last Revised Low = 2511721277;
+    Bank Last Revised High = 30557673;
 
     Wave
     {
@@ -346,7 +363,7 @@ Sound Bank
             Play Wave Event
             {
                 Loop Count = 255;
-                Break Loop = 1;
+                Break Loop = 0;
                 Use Speaker Position = 0;
                 Use Center Speaker = 1;
                 New Speaker Position On Loop = 1;
@@ -386,9 +403,58 @@ Sound Bank
         }
     }
 
+    Sound
+    {
+        Name = Sound 2;
+        Volume = -1200;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = WhiteNoise;
+                    Entry Index = 0;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
     Cue
     {
         Name = Cue 1;
+        Comment = Linear Fade in/out.;
 
         Variation
         {
@@ -401,6 +467,26 @@ Sound Bank
         {
             Name = Sound 1;
             Index = 0;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = Cue 2;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Sound 2;
+            Index = 1;
             Weight Min = 0;
             Weight Max = 255;
         }

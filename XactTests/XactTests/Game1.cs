@@ -2,6 +2,7 @@
 
 #region Using
 
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.IO;
 using Microsoft.Xna.Framework;
@@ -27,6 +28,22 @@ namespace XactTests
     private KeyboardState keyboardState;
     private KeyboardState previousKeyboardState;
 
+    class CueInfo
+    {
+      public CueInfo(string name, Keys key)
+      {
+        Name = name;
+        Key = key;
+        Cue = null;
+      }
+
+      public readonly string Name;
+      public readonly Keys Key;
+      public Cue Cue;
+    }
+
+    private readonly List<CueInfo> cueInfos;
+
     public Game1()
     {
       Content.RootDirectory = "Content";
@@ -36,6 +53,8 @@ namespace XactTests
       audio = new AudioEngine(Path.Combine(Content.RootDirectory, "XactTests.xgs"));
       waveBank = new WaveBank(audio, Path.Combine(Content.RootDirectory, "Wave Bank 1.xwb"));
       soundBank = new SoundBank(audio, Path.Combine(Content.RootDirectory, "Sound Bank 1.xsb"));
+
+      cueInfos = new List<CueInfo> {new CueInfo("Cue 1", Keys.S), new CueInfo("Cue 2", Keys.D)};
     }
 
     /// <summary>
@@ -70,8 +89,6 @@ namespace XactTests
       // TODO: Unload any non ContentManager content here
     }
 
-    private Cue cue;
-
     public bool IsKeyPressed(Keys key)
     {
       return keyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyUp(key);
@@ -96,26 +113,31 @@ namespace XactTests
       {
         keyboardState = Keyboard.GetState();
 
-        Keys startKey = Keys.S;
-        if (cue == null)
+        for (int i = 0; i < cueInfos.Count; ++i)
         {
-          if (IsKeyPressed(startKey))
-          {
-            cue = soundBank.GetCue("Cue 1");
-            cue.Play();
-          }
-        }
-        else
-        {
-          if (IsKeyReleased(startKey))
-          {
-            cue.Stop(AudioStopOptions.AsAuthored);
-          }
+          CueInfo cueInfo = cueInfos[i];
 
-          if (cue.IsStopped)
+          Keys soundEffectKey = cueInfo.Key;
+          if (cueInfo.Cue == null)
           {
-            cue.Dispose();
-            cue = null;
+            if (IsKeyPressed(soundEffectKey))
+            {
+              cueInfo.Cue = soundBank.GetCue(cueInfo.Name);
+              cueInfo.Cue.Play();
+            }
+          }
+          else
+          {
+            if (IsKeyReleased(soundEffectKey))
+            {
+              cueInfo.Cue.Stop(AudioStopOptions.AsAuthored);
+            }
+
+            if (cueInfo.Cue.IsStopped)
+            {
+              cueInfo.Cue.Dispose();
+              cueInfo.Cue = null;
+            }
           }
         }
 
@@ -132,6 +154,29 @@ namespace XactTests
     /// <param name="gameTime">Provides a snapshot of timing values.</param>
     protected override void Draw(GameTime gameTime)
     {
+      spriteBatch.Begin();
+
+      Color clearColor = Color.Black;
+      GraphicsDevice.Clear(clearColor);
+
+      Vector2 position = new Vector2(0, 0);
+
+      for (int i = 0; i < cueInfos.Count; i++)
+      {
+        CueInfo cueInfo = cueInfos[i];
+
+        DrawCueInfo(cueInfo, ref position);
+        position.Y = position.Y + lineSpacing;
+      }
+
+      spriteBatch.End();
+
+      base.Draw(gameTime);
+    }
+    public const float lineSpacing = 10;
+
+    private void DrawCueInfo(CueInfo cueInfo, ref Vector2 position)
+    {
       float numCueInstances = 0;
       float attackTime = 0;
       float releaseTime = 0;
@@ -139,52 +184,65 @@ namespace XactTests
       float orientationAngle = 0;
       float distance = 0;
 
-      Color clearColor;
-      if (cue != null)
+      bool isPlaying = false;
+      bool isStopping = false;
+      bool isStopped = true;
+
+      Color clearColor = Color.LightGray;
+      if (cueInfo.Cue != null)
       {
-        numCueInstances = cue.GetVariable("NumCueInstances");
-        attackTime = cue.GetVariable("AttackTime");
-        releaseTime = cue.GetVariable("ReleaseTime");
-        dopplerPitchScalar = cue.GetVariable("DopplerPitchScalar");
-        orientationAngle = cue.GetVariable("OrientationAngle");
-        distance = cue.GetVariable("Distance");
+        numCueInstances = cueInfo.Cue.GetVariable("NumCueInstances");
+        attackTime = cueInfo.Cue.GetVariable("AttackTime");
+        releaseTime = cueInfo.Cue.GetVariable("ReleaseTime");
+        dopplerPitchScalar = cueInfo.Cue.GetVariable("DopplerPitchScalar");
+        orientationAngle = cueInfo.Cue.GetVariable("OrientationAngle");
+        distance = cueInfo.Cue.GetVariable("Distance");
 
-        cue.SetVariable("DopplerPitchScalar", 2);
+        isPlaying = cueInfo.Cue.IsPlaying;
+        isStopping = cueInfo.Cue.IsStopping;
+        isStopped = cueInfo.Cue.IsStopped;
 
-        if (cue.IsPlaying)
+        if (isPlaying)
         {
-          clearColor = Color.Gray;
+          clearColor = Color.White;
         }
-        else if (cue.IsStopping)
+        else if (isStopping)
         {
           clearColor = Color.LightGray;
         }
-        else
+        else if (isStopped)
         {
-          clearColor = Color.Blue;
+          clearColor = Color.Gray;
         }
       }
       else
       {
-        clearColor = Color.Black;
+        clearColor = Color.DarkGray;
       }
 
-      GraphicsDevice.Clear(clearColor);
+      spriteBatch.DrawString(debugFont, string.Format("NumCueInstances={0}", numCueInstances), position, clearColor);
+      position.Y = position.Y + lineSpacing;
 
-      // TODO: Add your drawing code here
+      spriteBatch.DrawString(debugFont, string.Format("AttackTime={0}", attackTime), position, clearColor);
+      position.Y = position.Y + lineSpacing;
 
-      spriteBatch.Begin();
+      spriteBatch.DrawString(debugFont, string.Format("ReleaseTime={0}", releaseTime), position, clearColor);
+      position.Y = position.Y + lineSpacing;
 
-      spriteBatch.DrawString(debugFont, string.Format("NumCueInstances={0}", numCueInstances), new Vector2(0, 0), Color.White);
-      spriteBatch.DrawString(debugFont, string.Format("AttackTime={0}", attackTime), new Vector2(0, 10), Color.White);
-      spriteBatch.DrawString(debugFont, string.Format("ReleaseTime={0}", releaseTime), new Vector2(0, 20), Color.White);
-      spriteBatch.DrawString(debugFont, string.Format("DopplerPitchScalar={0}", dopplerPitchScalar), new Vector2(0, 30), Color.White);
-      spriteBatch.DrawString(debugFont, string.Format("OrientationAngle={0}", orientationAngle), new Vector2(0, 40), Color.White);
-      spriteBatch.DrawString(debugFont, string.Format("Distance={0}", distance), new Vector2(0, 50), Color.White);
+      spriteBatch.DrawString(debugFont, string.Format("DopplerPitchScalar={0}", dopplerPitchScalar), position,
+        clearColor);
+      position.Y = position.Y + lineSpacing;
 
-      spriteBatch.End();
+      spriteBatch.DrawString(debugFont, string.Format("OrientationAngle={0}", orientationAngle), position, clearColor);
+      position.Y = position.Y + lineSpacing;
 
-      base.Draw(gameTime);
+      spriteBatch.DrawString(debugFont, string.Format("Distance={0}", distance), position, clearColor);
+      position.Y = position.Y + lineSpacing;
+
+      spriteBatch.DrawString(debugFont,
+        string.Format("CueName={3}, IsPlaying={0}, IsStopping={1}, IsStopped={2}", isPlaying, isStopping, isStopped,
+          cueInfo.Name), position, clearColor);
+      position.Y = position.Y + lineSpacing;
     }
   }
 }
