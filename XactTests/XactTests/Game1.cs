@@ -1,7 +1,10 @@
 // Copyright© 2016-2016 Chad C. Yates (cyates@dynfxdigital.com)
 
+#define XACT_SIMPLE
+
 #region Using
 
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.IO;
@@ -22,6 +25,10 @@ namespace XactTests
     private readonly WaveBank waveBank;
     private readonly SoundBank soundBank;
 
+		private AudioListener listener = new AudioListener();
+		private AudioEmitter emitter = new AudioEmitter();
+		Vector3 previousEmitterPosition = new Vector3();
+
     private SpriteFont debugFont;
     private SpriteBatch spriteBatch;
 
@@ -30,14 +37,16 @@ namespace XactTests
 
     class CueInfo
     {
-      public CueInfo(string name, Keys key)
+      public CueInfo(string name, bool positional, Keys key)
       {
         Name = name;
+	      Positional = positional;
         Key = key;
         Cue = null;
       }
 
       public readonly string Name;
+	    public readonly bool Positional;
       public readonly Keys Key;
       public Cue Cue;
     }
@@ -50,11 +59,33 @@ namespace XactTests
 
       graphics = new GraphicsDeviceManager(this);
 
+
+#if !XACT_SIMPLE
+      audio = new AudioEngine(Path.Combine(Content.RootDirectory, "XactTestsSimple.xgs"));
+      waveBank = new WaveBank(audio, Path.Combine(Content.RootDirectory, "Wave Bank 2.xwb"));
+      soundBank = new SoundBank(audio, Path.Combine(Content.RootDirectory, "Sound Bank 2.xsb"));
+
+      cueInfos = new List<CueInfo>
+      {
+        new CueInfo("Cue 1", Keys.A)
+      };
+#else
       audio = new AudioEngine(Path.Combine(Content.RootDirectory, "XactTests.xgs"));
       waveBank = new WaveBank(audio, Path.Combine(Content.RootDirectory, "Wave Bank 1.xwb"));
       soundBank = new SoundBank(audio, Path.Combine(Content.RootDirectory, "Sound Bank 1.xsb"));
 
-      cueInfos = new List<CueInfo> {new CueInfo("Cue 1", Keys.S), new CueInfo("Cue 2", Keys.D)};
+      cueInfos = new List<CueInfo>
+      {
+        new CueInfo("Cue 1", false, Keys.A),
+        new CueInfo("Cue 2", false,Keys.S),
+        new CueInfo("Cue 3", false,Keys.D),
+        new CueInfo("Cue 4", false,Keys.F),
+        new CueInfo("Cue 5", false,Keys.G),
+        new CueInfo("Cue 6", false,Keys.H),
+				new CueInfo("Cue 7", false,Keys.J),
+				new CueInfo("Cue 8 (Doppler)", true, Keys.K)
+			};
+#endif
     }
 
     /// <summary>
@@ -123,7 +154,11 @@ namespace XactTests
             if (IsKeyPressed(soundEffectKey))
             {
               cueInfo.Cue = soundBank.GetCue(cueInfo.Name);
-              cueInfo.Cue.Play();
+	            if (cueInfo.Positional)
+	            {
+		            cueInfo.Cue.Apply3D(listener, emitter);
+	            }
+	            cueInfo.Cue.Play();
             }
           }
           else
@@ -144,8 +179,26 @@ namespace XactTests
         previousKeyboardState = keyboardState;
       }
 
-      // TODO: Add your update logic here
-      audio.Update();
+	    listener.Position = new Vector3(0, 0, 0);
+			listener.Velocity = new Vector3(0,0,0);
+			emitter.Position = new Vector3((float)Math.Sin(gameTime.TotalGameTime.TotalSeconds)*100, 0, -10);
+			emitter.Velocity = new Vector3(emitter.Position.X - previousEmitterPosition.X, 0, 0);
+	    emitter.DopplerScale = 20;
+
+			previousEmitterPosition = emitter.Position;
+
+			for (int i = 0; i < cueInfos.Count; i++)
+			{
+				CueInfo cueInfo = cueInfos[i];
+
+				if (cueInfo.Cue != null && cueInfo.Positional)
+				{
+					cueInfo.Cue.Apply3D(listener, emitter);
+				}
+			}
+
+			// TODO: Add your update logic here
+			audio.Update();
 
       base.Update(gameTime);
     }
@@ -161,7 +214,11 @@ namespace XactTests
 
       Vector2 position = new Vector2(0, 0);
 
-      for (int i = 0; i < cueInfos.Count; i++)
+			spriteBatch.DrawString(debugFont, string.Format("emitterPosition={0} emitterVelocity={1}", emitter.Position.X, emitter.Velocity.X), position, Color.White);
+			position.Y = position.Y + lineSpacing;
+			position.Y = position.Y + lineSpacing;
+
+			for (int i = 0; i < cueInfos.Count; i++)
       {
         CueInfo cueInfo = cueInfos[i];
 
@@ -220,9 +277,11 @@ namespace XactTests
         clearColor = Color.DarkGray;
       }
 
-      spriteBatch.DrawString(debugFont, string.Format("NumCueInstances={0}", numCueInstances), position, clearColor);
-      position.Y = position.Y + lineSpacing;
+			spriteBatch.DrawString(debugFont, string.Format("NumCueInstances={0}, AttackTime={1}, ReleaseTime={2}, DopplerPitchScalar={3}, OrientationAngle={4}, Distance={5}",
+				numCueInstances, attackTime, releaseTime, dopplerPitchScalar, orientationAngle, distance), position, clearColor);
+			position.Y = position.Y + lineSpacing;
 
+			/*
       spriteBatch.DrawString(debugFont, string.Format("AttackTime={0}", attackTime), position, clearColor);
       position.Y = position.Y + lineSpacing;
 
@@ -238,8 +297,9 @@ namespace XactTests
 
       spriteBatch.DrawString(debugFont, string.Format("Distance={0}", distance), position, clearColor);
       position.Y = position.Y + lineSpacing;
+			*/
 
-      spriteBatch.DrawString(debugFont,
+			spriteBatch.DrawString(debugFont,
         string.Format("CueName={3}, IsPlaying={0}, IsStopping={1}, IsStopped={2}", isPlaying, isStopping, isStopped,
           cueInfo.Name), position, clearColor);
       position.Y = position.Y + lineSpacing;
