@@ -52,6 +52,8 @@ namespace XactTests
     }
 
     private readonly List<CueInfo> cueInfos;
+    private bool autoMovement = true;
+    private float manualXPos = 0;
 
     public Game1()
     {
@@ -67,7 +69,7 @@ namespace XactTests
 
       cueInfos = new List<CueInfo>
       {
-        new CueInfo("Cue 1", Keys.A)
+        new CueInfo("Cue 1", false, Keys.A)
       };
 #else
       audio = new AudioEngine(Path.Combine(Content.RootDirectory, "XactTests.xgs"));
@@ -176,13 +178,44 @@ namespace XactTests
           }
         }
 
+        if (IsKeyPressed(Keys.T))
+        {
+          autoMovement = !autoMovement;
+          if (!autoMovement)
+          {
+            manualXPos = 0;
+            emitter.Position = new Vector3(manualXPos, emitter.Position.Y, emitter.Position.Z);
+            emitter.Velocity = Vector3.Zero;
+          }
+        }
+
+        if (!autoMovement)
+        {
+          float direction = IsKeyPressed(Keys.Left) ? -1.0f : IsKeyPressed(Keys.Right) ? 1.0f : 0.0f;
+
+          if (Math.Abs(direction) > float.Epsilon)
+          {
+            manualXPos += direction*25;
+            emitter.Position = new Vector3(manualXPos, emitter.Position.Y, emitter.Position.Z);
+            emitter.Velocity = new Vector3(direction*2, emitter.Velocity.Y, emitter.Velocity.Z);
+          }
+        }
+
         previousKeyboardState = keyboardState;
       }
 
 	    listener.Position = new Vector3(0, 0, 0);
 			listener.Velocity = new Vector3(0,0,0);
-			emitter.Position = new Vector3((float)Math.Sin(gameTime.TotalGameTime.TotalSeconds)*100, 0, -10);
-			emitter.Velocity = new Vector3(emitter.Position.X - previousEmitterPosition.X, 0, 0);
+
+      const float maxDistance = 125;
+      float periodicMovement = (float)Math.Sin(gameTime.TotalGameTime.TotalSeconds)*maxDistance;
+      float xPos = autoMovement ? periodicMovement : manualXPos;
+
+      if (autoMovement)
+      {
+        emitter.Position = new Vector3(xPos, 0, 10);
+        emitter.Velocity = new Vector3(emitter.Position.X - previousEmitterPosition.X, 0, 0);
+      }
 	    emitter.DopplerScale = 20;
 
 			previousEmitterPosition = emitter.Position;

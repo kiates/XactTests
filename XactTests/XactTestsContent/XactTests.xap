@@ -124,7 +124,7 @@ Global Settings
         Reserved = 1;
         Read Only = 0;
         Time = 0;
-        Value = 1.000000;
+        Value = 0.729064;
         Initial Value = 1.000000;
         Min = 0.000000;
         Max = 4.000000;
@@ -209,7 +209,7 @@ Global Settings
         Reserved = 1;
         Read Only = 0;
         Time = 0;
-        Value = 0.000000;
+        Value = 88.072021;
         Initial Value = 0.000000;
         Min = 0.000000;
         Max = 200.000000;
@@ -238,7 +238,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::254daef5-2529-40f5-be31-a358d3f8d4ea;
+            Name = 1::a58e8e55-b28f-4a0f-a70b-0ee5eda53330;
             Property = 0;
             Sound = 0;
             Line Color = 4285961702;
@@ -266,7 +266,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::60e9ef9f-0818-431f-83f0-675f260b3e0e;
+            Name = 1::f716785e-e4ab-472c-8e36-4df1ba0006fc;
             Property = 0;
             Sound = 0;
             Line Color = 4291057000;
@@ -299,7 +299,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = Sound::997ab79d-cc08-442a-9d70-21b629ec34c8;
+            Name = Sound::5ee567d3-b585-4358-b6ea-f243d5b455d7;
             Property = 1;
             Sound = 1;
             Line Color = 4283077921;
@@ -332,7 +332,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = Sound::c4bb2d44-1654-4ace-bc44-2f027b715597;
+            Name = Sound::f80c3b64-3ad0-4396-a2d1-f7caa976ef01;
             Property = 0;
             Sound = 1;
             Line Color = 4285970029;
@@ -353,28 +353,28 @@ Global Settings
             RPC Point
             {
                 X = 48.462116;
-                Y = -380.539276;
+                Y = -141.383347;
                 Curve = 0;
             }
 
             RPC Point
             {
-                X = 90.147781;
-                Y = -1305.882324;
+                X = 93.173294;
+                Y = -607.737427;
                 Curve = 0;
             }
 
             RPC Point
             {
-                X = 133.533386;
-                Y = -3226.494629;
+                X = 137.584396;
+                Y = -2186.166504;
                 Curve = 0;
             }
 
             RPC Point
             {
-                X = 172.543137;
-                Y = -6200.000000;
+                X = 175.543884;
+                Y = -5259.320313;
                 Curve = 0;
             }
 
@@ -477,6 +477,8 @@ Sound Bank
     Windows File = Win\Sound Bank 1.xsb;
     Xbox Bank Path Edited = 0;
     Windows Bank Path Edited = 0;
+    Header Last Modified High = 0;
+    Header Last Modified Low = 0;
 
     Sound
     {
@@ -563,13 +565,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::254daef5-2529-40f5-be31-a358d3f8d4ea;
+                RPC Curve Name = 1::a58e8e55-b28f-4a0f-a70b-0ee5eda53330;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::60e9ef9f-0818-431f-83f0-675f260b3e0e;
+                RPC Curve Name = 1::f716785e-e4ab-472c-8e36-4df1ba0006fc;
             }
         }
     }
@@ -608,6 +610,14 @@ Sound Bank
                     Relative = 0;
                     Random Recurrence = 0;
                     Random Offset = 0;
+                }
+
+                Pitch Variation
+                {
+                    Min = -1200;
+                    Max = 1200;
+                    Operator = 0;
+                    New Variation On Loop = 1;
                 }
 
                 Wave Entry
@@ -705,13 +715,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::254daef5-2529-40f5-be31-a358d3f8d4ea;
+                RPC Curve Name = 1::a58e8e55-b28f-4a0f-a70b-0ee5eda53330;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::60e9ef9f-0818-431f-83f0-675f260b3e0e;
+                RPC Curve Name = 1::f716785e-e4ab-472c-8e36-4df1ba0006fc;
             }
         }
     }
@@ -1071,7 +1081,7 @@ Sound Bank
     Sound
     {
         Name = Sound 8 (Doppler);
-        Volume = -1200;
+        Volume = -600;
         Pitch = 0;
         Priority = 0;
 
