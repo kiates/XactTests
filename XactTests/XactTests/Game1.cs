@@ -85,8 +85,10 @@ namespace XactTests
         new CueInfo("Cue 5", false,Keys.G),
         new CueInfo("Cue 6", false,Keys.H),
 				new CueInfo("Cue 7", false,Keys.J),
-				new CueInfo("Cue 8 (Doppler)", true, Keys.K)
-			};
+        new CueInfo("Cue 8 (Doppler)", true, Keys.K),
+        new CueInfo("Cue 9 (Wind)", false, Keys.L),
+        new CueInfo("Cue 10 (Pitch)", false, Keys.Z)
+      };
 #endif
     }
 
@@ -165,7 +167,7 @@ namespace XactTests
           }
           else
           {
-            if (IsKeyReleased(soundEffectKey))
+            if (IsKeyPressed(soundEffectKey))
             {
               cueInfo.Cue.Stop(AudioStopOptions.AsAuthored);
             }
@@ -246,6 +248,9 @@ namespace XactTests
       GraphicsDevice.Clear(clearColor);
 
       Vector2 position = new Vector2(0, 0);
+
+      AudioCategory category = audio.GetCategory("Music");
+      category.SetVolume(1);
 
 			spriteBatch.DrawString(debugFont, string.Format("emitterPosition={0} emitterVelocity={1}", emitter.Position.X, emitter.Velocity.X), position, Color.White);
 			position.Y = position.Y + lineSpacing;

@@ -124,7 +124,7 @@ Global Settings
         Reserved = 1;
         Read Only = 0;
         Time = 0;
-        Value = 0.729064;
+        Value = 1.000000;
         Initial Value = 1.000000;
         Min = 0.000000;
         Max = 4.000000;
@@ -234,11 +234,12 @@ Global Settings
 
     RPC
     {
-        Name = RPC Preset 1;
+        Name = RPC Preset 1 (Attack/Release);
+        Comment = Slow (2s)  fade in and out.;
 
         RPC Curve
         {
-            Name = 1::a58e8e55-b28f-4a0f-a70b-0ee5eda53330;
+            Name = 1::3800bb5f-01d1-41a9-b444-ced9414e7d8d;
             Property = 0;
             Sound = 0;
             Line Color = 4285961702;
@@ -266,7 +267,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::f716785e-e4ab-472c-8e36-4df1ba0006fc;
+            Name = 1::a1d036ed-da52-4339-8e92-143ef0125eb9;
             Property = 0;
             Sound = 0;
             Line Color = 4291057000;
@@ -299,7 +300,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = Sound::5ee567d3-b585-4358-b6ea-f243d5b455d7;
+            Name = Sound::b40fe2ae-1b9b-45b6-b6ee-14ce81cc5da4;
             Property = 1;
             Sound = 1;
             Line Color = 4283077921;
@@ -332,7 +333,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = Sound::f80c3b64-3ad0-4396-a2d1-f7caa976ef01;
+            Name = Sound::ee86f638-0f2d-4dfa-8d83-bfba009ddae2;
             Property = 0;
             Sound = 1;
             Line Color = 4285970029;
@@ -397,8 +398,8 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
-    Bank Last Revised Low = 3383172143;
-    Bank Last Revised High = 30559325;
+    Bank Last Revised Low = 2427567315;
+    Bank Last Revised High = 30559622;
 
     Wave
     {
@@ -418,8 +419,8 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 3937384448;
-            Last Modified High = 30051137;
+            Last Modified Low = 1179758447;
+            Last Modified High = 30559618;
         }
     }
 
@@ -441,8 +442,8 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 2366584704;
-            Last Modified High = 30128626;
+            Last Modified Low = 1179728586;
+            Last Modified High = 30559618;
         }
     }
 
@@ -477,16 +478,14 @@ Sound Bank
     Windows File = Win\Sound Bank 1.xsb;
     Xbox Bank Path Edited = 0;
     Windows Bank Path Edited = 0;
-    Header Last Modified High = 0;
-    Header Last Modified Low = 0;
 
     Sound
     {
-        Name = Sound 1;
+        Name = Sound 9 (Wind);
         Volume = -1200;
         Pitch = 0;
         Priority = 0;
-        Comment = Fade in/out.;
+        Comment = Repeating random (100ms) pitch events.;
 
         Category Entry
         {
@@ -495,7 +494,7 @@ Sound Bank
 
         RPC Entry
         {
-            RPC Name = RPC Preset 1;
+            RPC Name = RPC Preset 1 (Attack/Release);
         }
 
         Track
@@ -564,14 +563,14 @@ Sound Bank
 
             RPC Curve Entry
             {
-                RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::a58e8e55-b28f-4a0f-a70b-0ee5eda53330;
+                RPC Name = RPC Preset 1 (Attack/Release);
+                RPC Curve Name = 1::3800bb5f-01d1-41a9-b444-ced9414e7d8d;
             }
 
             RPC Curve Entry
             {
-                RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::f716785e-e4ab-472c-8e36-4df1ba0006fc;
+                RPC Name = RPC Preset 1 (Attack/Release);
+                RPC Curve Name = 1::a1d036ed-da52-4339-8e92-143ef0125eb9;
             }
         }
     }
@@ -648,7 +647,7 @@ Sound Bank
 
         RPC Entry
         {
-            RPC Name = RPC Preset 1;
+            RPC Name = RPC Preset 1 (Attack/Release);
         }
 
         Track
@@ -714,21 +713,21 @@ Sound Bank
 
             RPC Curve Entry
             {
-                RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::a58e8e55-b28f-4a0f-a70b-0ee5eda53330;
+                RPC Name = RPC Preset 1 (Attack/Release);
+                RPC Curve Name = 1::3800bb5f-01d1-41a9-b444-ced9414e7d8d;
             }
 
             RPC Curve Entry
             {
-                RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::f716785e-e4ab-472c-8e36-4df1ba0006fc;
+                RPC Name = RPC Preset 1 (Attack/Release);
+                RPC Curve Name = 1::a1d036ed-da52-4339-8e92-143ef0125eb9;
             }
         }
     }
 
     Sound
     {
-        Name = Sound 2;
+        Name = Sound 2 (Attack/Release);
         Volume = -1200;
         Pitch = 0;
         Priority = 0;
@@ -737,6 +736,11 @@ Sound Bank
         Category Entry
         {
             Name = Default;
+        }
+
+        RPC Entry
+        {
+            RPC Name = RPC Preset 1 (Attack/Release);
         }
 
         Track
@@ -770,6 +774,18 @@ Sound Bank
                     Weight = 255;
                     Weight Min = 0;
                 }
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset 1 (Attack/Release);
+                RPC Curve Name = 1::3800bb5f-01d1-41a9-b444-ced9414e7d8d;
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset 1 (Attack/Release);
+                RPC Curve Name = 1::a1d036ed-da52-4339-8e92-143ef0125eb9;
             }
         }
     }
@@ -1136,6 +1152,133 @@ Sound Bank
         }
     }
 
+    Sound
+    {
+        Name = Sound 1;
+        Volume = -1200;
+        Pitch = 0;
+        Priority = 0;
+        Comment = Simple white noise, defaults.;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = WhiteNoise;
+                    Entry Index = 0;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = Sound 1 - Pitch Ramp;
+        Volume = -1200;
+        Pitch = 600;
+        Priority = 0;
+        Comment = Change all initial pitches.;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Pitch Variation
+                {
+                    Min = 100;
+                    Max = 100;
+                    Operator = 1;
+                    New Variation On Loop = 1;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = Force Field 1;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 1000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = 100;
+                    }
+                }
+            }
+        }
+    }
+
     Cue
     {
         Name = Cue 1;
@@ -1151,7 +1294,7 @@ Sound Bank
         Sound Entry
         {
             Name = Sound 1;
-            Index = 0;
+            Index = 8;
             Weight Min = 0;
             Weight Max = 255;
         }
@@ -1171,7 +1314,7 @@ Sound Bank
 
         Sound Entry
         {
-            Name = Sound 2;
+            Name = Sound 2 (Attack/Release);
             Index = 3;
             Weight Min = 0;
             Weight Max = 255;
@@ -1192,7 +1335,7 @@ Sound Bank
 
         Sound Entry
         {
-            Name = Sound 1;
+            Name = Sound 9 (Wind);
             Index = 0;
             Weight Min = 0;
             Weight Max = 255;
@@ -1229,7 +1372,7 @@ Sound Bank
 
         Sound Entry
         {
-            Name = Sound 1;
+            Name = Sound 9 (Wind);
             Index = 0;
             Weight Min = 0;
             Weight Max = 255;
@@ -1329,6 +1472,46 @@ Sound Bank
         {
             Name = Sound 8 (Doppler);
             Index = 7;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = Cue 9 (Wind);
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Sound 9 (Wind);
+            Index = 0;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = Cue 10 (Pitch);
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Sound 1 - Pitch Ramp;
+            Index = 9;
             Weight Min = 0;
             Weight Max = 255;
         }
