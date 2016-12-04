@@ -71,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Sound.cs" />
+    <Compile Include="XactSound.cs" />
+    <Compile Include="XnaSound.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\..\ThirdParty\FNALibs\win32\libjpeg-9.dll">
