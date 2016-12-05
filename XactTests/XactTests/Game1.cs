@@ -22,8 +22,10 @@ namespace XactTests
   {
     private GraphicsDeviceManager graphics;
     private readonly AudioEngine audio;
-    private readonly WaveBank waveBank;
-    private readonly SoundBank soundBank;
+    private readonly WaveBank waveBank1;
+    private readonly SoundBank soundBank1;
+    private readonly WaveBank waveBank2;
+    private readonly SoundBank soundBank2;
 
     private SoundEffect whiteNoiseSoundEffect;
 
@@ -61,10 +63,18 @@ namespace XactTests
 #else
       audio =
         new AudioEngine(Path.Combine(Content.RootDirectory, "XactTests.xgs"));
-      waveBank = new WaveBank(audio,
+
+      // In-memory wave bank.
+      waveBank1 = new WaveBank(audio,
         Path.Combine(Content.RootDirectory, "Wave Bank 1.xwb"));
-      soundBank = new SoundBank(audio,
+      soundBank1 = new SoundBank(audio,
         Path.Combine(Content.RootDirectory, "Sound Bank 1.xsb"));
+
+      // Streaming wave bank.
+      waveBank2 = new WaveBank(audio,
+        Path.Combine(Content.RootDirectory, "Wave Bank 2.xwb"), 0, 4);
+      soundBank2 = new SoundBank(audio,
+        Path.Combine(Content.RootDirectory, "Sound Bank 2.xsb"));
 #endif
     }
 
@@ -91,17 +101,18 @@ namespace XactTests
 
       cueInfos = new List<Sound>
       {
-        new XactSound(soundBank, "Cue 1", false, Keys.A),
-        new XactSound(soundBank, "Cue 2", false, Keys.S),
-        new XactSound(soundBank, "Cue 3", false, Keys.D),
-        new XactSound(soundBank, "Cue 4", false, Keys.F),
-        new XactSound(soundBank, "Cue 5", false, Keys.G),
-        new XactSound(soundBank, "Cue 6", false, Keys.H),
-        new XactSound(soundBank, "Cue 7", false, Keys.J),
-        new XactSound(soundBank, "Cue 8 (Doppler)", true, Keys.K),
-        new XactSound(soundBank, "Cue 9 (Wind)", false, Keys.L),
-        new XactSound(soundBank, "Cue 10 (Pitch)", false, Keys.Z),
-        new XnaSound(whiteNoiseSoundEffect, "Cue 10 (Pitch)", true, false, Keys.X)
+        new XactSound(soundBank1, "Cue 1", false, Keys.A),
+        new XactSound(soundBank1, "Cue 2", false, Keys.S),
+        new XactSound(soundBank1, "Cue 3", false, Keys.D),
+        new XactSound(soundBank1, "Cue 4", false, Keys.F),
+        new XactSound(soundBank1, "Cue 5", false, Keys.G),
+        new XactSound(soundBank1, "Cue 6", false, Keys.H),
+        new XactSound(soundBank1, "Cue 7", false, Keys.J),
+        new XactSound(soundBank1, "Cue 8 (Doppler)", true, Keys.K),
+        new XactSound(soundBank1, "Cue 9 (Wind)", false, Keys.L),
+        new XactSound(soundBank1, "Cue 10 (Pitch)", false, Keys.Z),
+        new XnaSound(whiteNoiseSoundEffect, "Cue 10 (Pitch)", true, false, Keys.X),
+        new XactSound(soundBank2, "Music Cue 1", false, Keys.C)
       };
     }
 
