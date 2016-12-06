@@ -101,18 +101,28 @@ namespace XactTests
 
       cueInfos = new List<Sound>
       {
+        new XactSound(soundBank1, "Cue 1", true, Keys.Q),
         new XactSound(soundBank1, "Cue 1", false, Keys.A),
+        new XactSound(soundBank1, "Cue 2", true, Keys.W),
         new XactSound(soundBank1, "Cue 2", false, Keys.S),
+        new XactSound(soundBank1, "Cue 3", true, Keys.E),
         new XactSound(soundBank1, "Cue 3", false, Keys.D),
+        new XactSound(soundBank1, "Cue 4", true, Keys.R),
         new XactSound(soundBank1, "Cue 4", false, Keys.F),
+        new XactSound(soundBank1, "Cue 5", true, Keys.T),
         new XactSound(soundBank1, "Cue 5", false, Keys.G),
+        new XactSound(soundBank1, "Cue 6", true, Keys.Y),
         new XactSound(soundBank1, "Cue 6", false, Keys.H),
+        new XactSound(soundBank1, "Cue 7", true, Keys.U),
         new XactSound(soundBank1, "Cue 7", false, Keys.J),
-        new XactSound(soundBank1, "Cue 8 (Doppler)", true, Keys.K),
+        new XactSound(soundBank1, "Cue 8 (Doppler)", true, Keys.I),
+        new XactSound(soundBank1, "Cue 8 (Doppler)", false, Keys.K),
+        new XactSound(soundBank1, "Cue 9 (Wind)", true, Keys.O),
         new XactSound(soundBank1, "Cue 9 (Wind)", false, Keys.L),
         new XactSound(soundBank1, "Cue 10 (Pitch)", false, Keys.Z),
         new XnaSound(whiteNoiseSoundEffect, "Cue 10 (Pitch)", true, false, Keys.X),
-        new XactSound(soundBank2, "Music Cue 1", false, Keys.C)
+        new XactSound(soundBank2, "Music Cue 1", false, Keys.C),
+        new XactSound(soundBank2, "Music Cue 1", true, Keys.V)
       };
     }
 
@@ -184,7 +194,7 @@ namespace XactTests
           listener.Velocity = new Vector3(0, 0, 0);
 
           // Toggle automatic/manual emitter movement.
-          if (IsKeyPressed(Keys.T))
+          if (IsKeyPressed(Keys.M))
           {
             autoMovement = !autoMovement;
             if (!autoMovement)
