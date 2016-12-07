@@ -200,8 +200,7 @@ namespace XactTests
             if (!autoMovement)
             {
               manualXPos = 0;
-              emitter.Position = new Vector3(manualXPos, emitter.Position.Y,
-                emitter.Position.Z);
+              emitter.Position = new Vector3(manualXPos, 0, 0);
               emitter.Velocity = Vector3.Zero;
             }
           }
