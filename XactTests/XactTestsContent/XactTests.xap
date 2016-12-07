@@ -239,7 +239,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::21e47b69-e42c-450d-9cf8-ca36e9fb7d1e;
+            Name = 1::d1b822de-ec9a-47ab-9a07-72f3b43ae5ae;
             Property = 0;
             Sound = 0;
             Line Color = 4285961702;
@@ -267,7 +267,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::323947e4-aacf-4042-917e-fd2eec945880;
+            Name = 1::ae7304a1-db7c-4444-b97d-adad5638166d;
             Property = 0;
             Sound = 0;
             Line Color = 4291057000;
@@ -300,7 +300,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = Sound::43400c50-6f64-47eb-8751-f06626f6383f;
+            Name = Sound::4b120acd-2ca3-498d-ae1a-5fccae7d6294;
             Property = 1;
             Sound = 1;
             Line Color = 4283077921;
@@ -333,7 +333,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = Sound::6fda2939-19a0-49ff-ab5f-42bba8b9d4a9;
+            Name = Sound::bd16ee3e-fdf7-4898-a236-fc70317f0e0d;
             Property = 0;
             Sound = 1;
             Line Color = 4285970029;
@@ -387,19 +387,6 @@ Global Settings
             }
         }
     }
-
-    Compression Preset
-    {
-        Name = Compression Preset 1;
-        Xbox Format Tag = 357;
-        Target Sample Rate = 48000;
-        XMA Quality = 60;
-        Find Best Quality = 0;
-        High Freq Cut = 0;
-        Loop = 0;
-        PC Format Tag = 2;
-        Samples Per Block = 256;
-    }
 }
 
 Wave Bank
@@ -411,14 +398,8 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
-    Xbox Bank Last Modified Low = 0;
-    Xbox Bank Last Modified High = 0;
-    PC Bank Last Modified Low = 0;
-    PC Bank Last Modified High = 0;
-    Header Last Modified Low = 0;
-    Header Last Modified High = 0;
-    Bank Last Revised Low = 2427567315;
-    Bank Last Revised High = 30559622;
+    Bank Last Revised Low = 3282772002;
+    Bank Last Revised High = 30560325;
 
     Wave
     {
@@ -490,43 +471,6 @@ Wave Bank
     }
 }
 
-Wave Bank
-{
-    Name = Wave Bank 2;
-    Xbox File = Xbox\Wave Bank 2.xwb;
-    Windows File = Win\Wave Bank 2.xwb;
-    Xbox Bank Path Edited = 0;
-    Windows Bank Path Edited = 0;
-    Streaming = 1;
-    Seek Tables = 1;
-    Compression Preset Name = Compression Preset 1;
-    Bank Last Revised Low = 1229063258;
-    Bank Last Revised High = 30559888;
-
-    Wave
-    {
-        Name = Chad Yates - Ethereal Myst;
-        File = Chad Yates - Ethereal Myst.wav;
-        Build Settings Last Modified Low = 1229058706;
-        Build Settings Last Modified High = 30559888;
-
-        Cache
-        {
-            Format Tag = 0;
-            Channels = 2;
-            Sampling Rate = 44100;
-            Bits Per Sample = 1;
-            Play Region Offset = 44;
-            Play Region Length = 51685148;
-            Loop Region Offset = 0;
-            Loop Region Length = 0;
-            File Type = 1;
-            Last Modified Low = 1725081946;
-            Last Modified High = 30554022;
-        }
-    }
-}
-
 Sound Bank
 {
     Name = Sound Bank 1;
@@ -534,8 +478,6 @@ Sound Bank
     Windows File = Win\Sound Bank 1.xsb;
     Xbox Bank Path Edited = 0;
     Windows Bank Path Edited = 0;
-    Header Last Modified High = 0;
-    Header Last Modified Low = 0;
 
     Sound
     {
@@ -622,13 +564,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::21e47b69-e42c-450d-9cf8-ca36e9fb7d1e;
+                RPC Curve Name = 1::d1b822de-ec9a-47ab-9a07-72f3b43ae5ae;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::323947e4-aacf-4042-917e-fd2eec945880;
+                RPC Curve Name = 1::ae7304a1-db7c-4444-b97d-adad5638166d;
             }
         }
     }
@@ -772,13 +714,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::21e47b69-e42c-450d-9cf8-ca36e9fb7d1e;
+                RPC Curve Name = 1::d1b822de-ec9a-47ab-9a07-72f3b43ae5ae;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::323947e4-aacf-4042-917e-fd2eec945880;
+                RPC Curve Name = 1::ae7304a1-db7c-4444-b97d-adad5638166d;
             }
         }
     }
@@ -838,13 +780,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::21e47b69-e42c-450d-9cf8-ca36e9fb7d1e;
+                RPC Curve Name = 1::d1b822de-ec9a-47ab-9a07-72f3b43ae5ae;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::323947e4-aacf-4042-917e-fd2eec945880;
+                RPC Curve Name = 1::ae7304a1-db7c-4444-b97d-adad5638166d;
             }
         }
     }
@@ -1338,6 +1280,54 @@ Sound Bank
         }
     }
 
+    Sound
+    {
+        Name = Sound 1 (Thrust);
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = Force Field 1;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
     Cue
     {
         Name = Cue 1;
@@ -1352,8 +1342,8 @@ Sound Bank
 
         Sound Entry
         {
-            Name = Sound 1;
-            Index = 8;
+            Name = Sound 1 (Thrust);
+            Index = 10;
             Weight Min = 0;
             Weight Max = 255;
         }
@@ -1571,82 +1561,6 @@ Sound Bank
         {
             Name = Sound 1 - Pitch Ramp;
             Index = 9;
-            Weight Min = 0;
-            Weight Max = 255;
-        }
-    }
-}
-
-Sound Bank
-{
-    Name = Sound Bank 2;
-    Xbox File = Xbox\Sound Bank 2.xsb;
-    Windows File = Win\Sound Bank 2.xsb;
-    Xbox Bank Path Edited = 0;
-    Windows Bank Path Edited = 0;
-
-    Sound
-    {
-        Name = Chad Yates - Ethereal Myst;
-        Volume = -1200;
-        Pitch = 0;
-        Priority = 0;
-
-        Category Entry
-        {
-            Name = Music;
-        }
-
-        Track
-        {
-            Volume = 0;
-            Use Filter = 0;
-
-            Play Wave Event
-            {
-                Break Loop = 0;
-                Use Speaker Position = 0;
-                Use Center Speaker = 1;
-                New Speaker Position On Loop = 1;
-                Speaker Position Angle = 0.000000;
-                Speaker Position Arc = 0.000000;
-
-                Event Header
-                {
-                    Timestamp = 0;
-                    Relative = 0;
-                    Random Recurrence = 0;
-                    Random Offset = 0;
-                }
-
-                Wave Entry
-                {
-                    Bank Name = Wave Bank 2;
-                    Bank Index = 1;
-                    Entry Name = Chad Yates - Ethereal Myst;
-                    Entry Index = 0;
-                    Weight = 255;
-                    Weight Min = 0;
-                }
-            }
-        }
-    }
-
-    Cue
-    {
-        Name = Music Cue 1;
-
-        Variation
-        {
-            Variation Type = 3;
-            Variation Table Type = 1;
-            New Variation on Loop = 0;
-        }
-
-        Sound Entry
-        {
-            Name = Chad Yates - Ethereal Myst;
-            Index = 0;
             Weight Min = 0;
             Weight Max = 255;
         }
