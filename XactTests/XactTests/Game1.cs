@@ -134,6 +134,11 @@ namespace XactTests
       // TODO: Unload any non ContentManager content here
     }
 
+    public bool IsKeyPressed(Keys key, Keys modifierKey)
+    {
+      return keyboardState.IsKeyDown(modifierKey) && keyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyUp(key);
+    }
+
     public bool IsKeyPressed(Keys key)
     {
       return keyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyUp(key);
@@ -165,16 +170,28 @@ namespace XactTests
 
           // Start and stop sounds.
           Keys soundEffectKey = cueSound.Key;
-          if (!cueSound.IsActive)
+          if (!cueSound.IsActive || cueSound.IsPrepared)
           {
-            if (IsKeyPressed(soundEffectKey))
+            if (IsKeyPressed(soundEffectKey, Keys.LeftShift))
+            {
+              if (cueSound is XactSound)
+              {
+                XactSound xactSound = cueSound as XactSound;
+                xactSound.GetCue();
+              }
+            }
+            else if (IsKeyPressed(soundEffectKey))
             {
               cueSound.Play(listener, emitter);
             }
           }
           else
           {
-            if (cueSound.IsPlaying)
+            if (IsKeyPressed(soundEffectKey, Keys.LeftShift))
+            {
+              cueSound.Paused = !cueSound.Paused;
+            }
+            else if (cueSound.IsPlaying)
             {
               if (IsKeyPressed(soundEffectKey))
               {
@@ -283,7 +300,7 @@ namespace XactTests
         Sound cueSound = cueInfos[i];
 
         cueSound.DrawCueInfo(spriteBatch, debugFont, ref position);
-        position.Y = position.Y + debugFont.LineSpacing;
+        position.Y = position.Y + debugFont.LineSpacing*.25f;
       }
 
       spriteBatch.End();

@@ -29,6 +29,8 @@ namespace XactTests
 
     public override bool IsActive { get { return Instance != null; } }
 
+    public override bool IsPrepared { get { return IsActive; } }
+
     public override bool IsPlaying
     {
       get { return Instance != null && Instance.State == SoundState.Playing; }
@@ -39,6 +41,23 @@ namespace XactTests
     public override bool IsStopped
     {
       get { return Instance == null || Instance.State == SoundState.Stopped; }
+    }
+
+    public override bool Paused { get
+    {
+      return Instance.State == SoundState.Paused;
+    }
+      set
+      {
+        if (value && !Paused)
+        {
+          Instance.Pause();
+        }
+        else if (!value && Paused)
+        {
+          Instance.Resume();
+        }
+      }
     }
 
     public override void Play(AudioListener listener, AudioEmitter emitter)

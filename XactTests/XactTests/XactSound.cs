@@ -3,7 +3,9 @@
 #region Using
 
 using System;
+using System.Diagnostics;
 using System.Diagnostics.Contracts;
+using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
@@ -27,6 +29,8 @@ namespace XactTests
 
     public override bool IsActive { get { return Cue != null; } }
 
+    public override bool IsPrepared { get {return IsActive && Cue.IsPrepared;} }
+
     public override bool IsPlaying
     {
       get { return Cue != null && Cue.IsPlaying; }
@@ -42,9 +46,38 @@ namespace XactTests
       get { return Cue == null || Cue.IsStopped; }
     }
 
+    public override bool Paused
+    {
+      get { return Cue.IsPaused; }
+      set
+      {
+        if (value && !Cue.IsPaused)
+        {
+          Cue.Pause();
+        }
+        else if (!value && Cue.IsPaused)
+        {
+          Cue.Resume();
+        }
+      }
+    }
+
+    public Cue GetCue()
+    {
+      if (Cue == null)
+      {
+        Cue = soundBank.GetCue(Name);
+      }
+
+      return Cue;
+    }
+
     public override void Play(AudioListener listener, AudioEmitter emitter)
     {
-      Cue = soundBank.GetCue(Name);
+      if (Cue == null)
+      {
+        Cue = soundBank.GetCue(Name);
+      }
 
       if (Positional)
       {
@@ -80,9 +113,14 @@ namespace XactTests
       float orientationAngle = 0;
       float distance = 0;
 
+      bool isCreated = false;
+      bool isPreparing = false;
+      bool isPrepared = false;
       bool isPlaying = false;
+      bool isPaused = false;
       bool isStopping = false;
       bool isStopped = true;
+      bool isDisposed = true;
 
       Color clearColor = Color.LightGray;
       if (IsActive)
@@ -94,9 +132,14 @@ namespace XactTests
         orientationAngle = Cue.GetVariable("OrientationAngle");
         distance = Cue.GetVariable("Distance");
 
+        isCreated = Cue.IsCreated;
+        isPreparing = Cue.IsPreparing;
+        isPrepared = Cue.IsPrepared;
         isPlaying = Cue.IsPlaying;
+        isPaused = Cue.IsPaused;
         isStopping = Cue.IsStopping;
         isStopped = Cue.IsStopped;
+        isDisposed = Cue.IsDisposed;
 
         if (isPlaying)
         {
@@ -116,17 +159,22 @@ namespace XactTests
         clearColor = Color.DarkGray;
       }
 
-      spriteBatch.DrawString(font,
-        String.Format(
-          "XactCue: Name='{3}', IsPlaying={0}, IsStopping={1}, IsStopped={2}",
-          isPlaying, isStopping, isStopped, Name), position, clearColor);
+      StringBuilder sb = new StringBuilder(1000);
+
+      sb.Clear();
+      sb.Append(
+        String.Format("XactCue: Nm='{0}',Crtd={1},Prpng={2},Prpd={3},Plyng={4},Psd={5},Stpng={6},Stpd={7},Dspd={8}",
+          Name, isCreated, isPreparing, isPrepared, isPlaying, isPaused, isStopping, isStopped, isDisposed));
+      spriteBatch.DrawString(font, sb.ToString(), position, clearColor);
       position.Y = position.Y + font.LineSpacing;
 
-      spriteBatch.DrawString(font,
+      sb.Clear();
+      sb.Append(
         String.Format(
-          "NumCueInstances={0}, AttackTime={1}, ReleaseTime={2}, DopplerPitchScalar={3}, OrientationAngle={4}, Distance={5}",
+          "#Cues={0},AtkTm={1},RlsTm={2},DpSclr={3},Ang={4},Dstnc={5}",
           numCueInstances, attackTime, releaseTime, dopplerPitchScalar,
-          orientationAngle, distance), position, clearColor);
+          orientationAngle, distance));
+      spriteBatch.DrawString(font, sb.ToString(), position, clearColor);
       position.Y = position.Y + font.LineSpacing;
     }
   }
