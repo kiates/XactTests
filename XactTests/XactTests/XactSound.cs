@@ -46,6 +46,8 @@ namespace XactTests
       get { return Cue == null || Cue.IsStopped; }
     }
 
+    public override bool IsDisposed { get { return Cue.IsDisposed; } }
+
     public override bool Paused
     {
       get { return Cue.IsPaused; }
@@ -100,6 +102,10 @@ namespace XactTests
     public override void Dispose()
     {
       Cue.Dispose();
+    }
+
+    public override void Deactivate()
+    {
       Cue = null;
     }
 
@@ -119,11 +125,12 @@ namespace XactTests
       bool isPlaying = false;
       bool isPaused = false;
       bool isStopping = false;
-      bool isStopped = true;
-      bool isDisposed = true;
+      bool isStopped = false;
+      bool isDisposed = IsActive && Cue.IsDisposed;
+      bool isActive = IsActive;
 
       Color clearColor = Color.LightGray;
-      if (IsActive)
+      if (IsActive && !Cue.IsDisposed)
       {
         numCueInstances = Cue.GetVariable("NumCueInstances");
         attackTime = Cue.GetVariable("AttackTime");
@@ -163,8 +170,8 @@ namespace XactTests
 
       sb.Clear();
       sb.Append(
-        String.Format("XactCue: Nm='{0}',Crtd={1},Prpng={2},Prpd={3},Plyng={4},Psd={5},Stpng={6},Stpd={7},Dspd={8}",
-          Name, isCreated, isPreparing, isPrepared, isPlaying, isPaused, isStopping, isStopped, isDisposed));
+        String.Format("XactCue: Nm='{0}',Crtd={1},Prpng={2},Prpd={3},Plyng={4},Psd={5},Stpng={6},Stpd={7},Dspd={8},Actv={9}",
+          Name, isCreated, isPreparing, isPrepared, isPlaying, isPaused, isStopping, isStopped, isDisposed, isActive));
       spriteBatch.DrawString(font, sb.ToString(), position, clearColor);
       position.Y = position.Y + font.LineSpacing;
 

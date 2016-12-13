@@ -48,8 +48,11 @@ namespace XactTests
     {
       Content.RootDirectory = "Content";
 
-      graphics = new GraphicsDeviceManager(this);
-
+      graphics = new GraphicsDeviceManager(this)
+      {
+        PreferredBackBufferWidth = 1280,
+        PreferredBackBufferHeight = 720
+      };
 
 #if !XACT_SIMPLE
       audio = new AudioEngine(Path.Combine(Content.RootDirectory, "XactTestsSimple.xgs"));
@@ -191,16 +194,20 @@ namespace XactTests
             {
               cueSound.Paused = !cueSound.Paused;
             }
-            else if (cueSound.IsPlaying)
+            else if (IsKeyPressed(soundEffectKey))
             {
-              if (IsKeyPressed(soundEffectKey))
+              if (cueSound.IsPlaying)
               {
                 cueSound.Stop(AudioStopOptions.AsAuthored);
               }
-            }
-            else if (cueSound.IsStopped)
-            {
-              cueSound.Dispose();
+              else if (cueSound.IsStopped)
+              {
+                cueSound.Dispose();
+              }
+              else if (cueSound.IsDisposed)
+              {
+                cueSound.Deactivate();
+              }
             }
           }
         }

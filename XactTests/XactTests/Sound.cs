@@ -31,6 +31,7 @@ namespace XactTests
     public abstract bool IsPlaying { get; }
     public abstract bool IsStopping { get; }
     public abstract bool IsStopped { get; }
+    public abstract bool IsDisposed { get; }
     public abstract bool Paused { get; set; }
     public abstract void Play(AudioListener listener, AudioEmitter emitter);
     public abstract void Apply3D(AudioListener listener, AudioEmitter emitter);
@@ -40,5 +41,7 @@ namespace XactTests
 
     public abstract void DrawCueInfo(SpriteBatch spriteBatch, SpriteFont font,
       ref Vector2 position);
+
+    public abstract void Deactivate();
   }
 }

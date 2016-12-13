@@ -43,6 +43,8 @@ namespace XactTests
       get { return Instance == null || Instance.State == SoundState.Stopped; }
     }
 
+    public override bool IsDisposed { get {return Instance.IsDisposed; } }
+
     public override bool Paused { get
     {
       return Instance.State == SoundState.Paused;
@@ -80,6 +82,10 @@ namespace XactTests
     public override void Dispose()
     {
       Instance.Dispose();
+    }
+
+    public override void Deactivate()
+    {
       Instance = null;
     }
 
