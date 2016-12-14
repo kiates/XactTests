@@ -1,6 +1,6 @@
 // Copyright© 2016-2016 Chad C. Yates (cyates@dynfxdigital.com)
 
-#define XACT_SIMPLE
+//#define XACT_SIMPLE
 
 #region Using
 
@@ -24,9 +24,10 @@ namespace XactTests
     private readonly AudioEngine audio;
     private readonly WaveBank waveBank1;
     private readonly SoundBank soundBank1;
+#if !XACT_SIMPLE
     private readonly WaveBank waveBank2;
     private readonly SoundBank soundBank2;
-
+#endif
     private SoundEffect whiteNoiseSoundEffect;
 
     private readonly AudioListener listener = new AudioListener();
@@ -54,15 +55,10 @@ namespace XactTests
         PreferredBackBufferHeight = 720
       };
 
-#if !XACT_SIMPLE
+#if XACT_SIMPLE
       audio = new AudioEngine(Path.Combine(Content.RootDirectory, "XactTestsSimple.xgs"));
-      waveBank = new WaveBank(audio, Path.Combine(Content.RootDirectory, "Wave Bank 2.xwb"));
-      soundBank = new SoundBank(audio, Path.Combine(Content.RootDirectory, "Sound Bank 2.xsb"));
-
-      cueInfos = new List<XactSound>
-      {
-        new XactSound("Cue 1", false, Keys.A)
-      };
+      waveBank1 = new WaveBank(audio, Path.Combine(Content.RootDirectory, "Wave Bank 3.xwb"));
+      soundBank1 = new SoundBank(audio, Path.Combine(Content.RootDirectory, "Sound Bank 3.xsb"));
 #else
       audio =
         new AudioEngine(Path.Combine(Content.RootDirectory, "XactTests.xgs"));
@@ -102,6 +98,12 @@ namespace XactTests
       spriteBatch = new SpriteBatch(GraphicsDevice);
       debugFont = Content.Load<SpriteFont>("DebugFont");
 
+#if XACT_SIMPLE
+      cueInfos = new List<Sound>
+      {
+        new XactSound(soundBank1, "Cue 1", false, Keys.A)
+      };
+#else
       cueInfos = new List<Sound>
       {
         new XactSound(soundBank1, "Cue 1", true, Keys.Q),
@@ -127,6 +129,7 @@ namespace XactTests
         new XactSound(soundBank2, "Music Cue 1", false, Keys.C),
         new XactSound(soundBank2, "Music Cue 1", true, Keys.V)
       };
+#endif
     }
 
     /// <summary>

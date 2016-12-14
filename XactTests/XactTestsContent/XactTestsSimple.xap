@@ -238,7 +238,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::8c26c438-64b4-496a-bbe2-77695421b650;
+            Name = 1::68df467f-b2ef-42cd-b54c-950b8dad2524;
             Property = 0;
             Sound = 0;
             Line Color = 4285961702;
@@ -266,7 +266,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::6f4ff7a1-c3fd-4cd3-983d-7a0ffd966456;
+            Name = 1::e25b5479-998c-48e5-bc8f-3452573d1321;
             Property = 0;
             Sound = 0;
             Line Color = 4291057000;
@@ -296,15 +296,15 @@ Global Settings
 
 Wave Bank
 {
-    Name = Wave Bank 2;
-    Xbox File = Xbox\Wave Bank 2.xwb;
-    Windows File = Win\Wave Bank 2.xwb;
+    Name = Wave Bank 3;
+    Xbox File = Xbox\Wave Bank 3.xwb;
+    Windows File = Win\Wave Bank 3.xwb;
     Xbox Bank Path Edited = 0;
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
-    Bank Last Revised Low = 2066684407;
-    Bank Last Revised High = 30559121;
+    Bank Last Revised Low = 1524989525;
+    Bank Last Revised High = 30561746;
 
     Wave
     {
@@ -378,9 +378,9 @@ Wave Bank
 
 Sound Bank
 {
-    Name = Sound Bank 2;
-    Xbox File = Xbox\Sound Bank 2.xsb;
-    Windows File = Win\Sound Bank 2.xsb;
+    Name = Sound Bank 3;
+    Xbox File = Xbox\Sound Bank 3.xsb;
+    Windows File = Win\Sound Bank 3.xsb;
     Xbox Bank Path Edited = 0;
     Windows Bank Path Edited = 0;
 
@@ -427,7 +427,7 @@ Sound Bank
 
                 Wave Entry
                 {
-                    Bank Name = Wave Bank 2;
+                    Bank Name = Wave Bank 3;
                     Bank Index = 0;
                     Entry Name = WhiteNoise;
                     Entry Index = 0;
@@ -436,97 +436,32 @@ Sound Bank
                 }
             }
 
-            Set Pitch Event
+            Marker Event
             {
+                Data = 999;
+
                 Event Header
                 {
-                    Timestamp = 2000;
+                    Timestamp = 0;
                     Relative = 0;
                     Random Recurrence = 0;
                     Random Offset = 0;
                 }
 
-                Equation
+                Recurrence
                 {
-                    Operator = 0;
-
-                    Operand
-                    {
-                        Constant = -1200;
-                    }
+                    Count = 65535;
+                    Frequency = 2000;
+                    Beats Per Minute = 0;
+                    Beats Per Minute Frequency = 0.000000;
                 }
             }
 
-            Set Pitch Event
+            Set Volume Event
             {
                 Event Header
                 {
-                    Timestamp = 3000;
-                    Relative = 0;
-                    Random Recurrence = 0;
-                    Random Offset = 0;
-                }
-
-                Equation
-                {
-                    Operator = 1;
-
-                    Operand
-                    {
-                        Constant = 1200;
-                    }
-                }
-            }
-
-            Set Pitch Event
-            {
-                Event Header
-                {
-                    Timestamp = 4000;
-                    Relative = 0;
-                    Random Recurrence = 0;
-                    Random Offset = 0;
-                }
-
-                Equation
-                {
-                    Operator = 0;
-
-                    Operand
-                    {
-                        Min Random = -1200;
-                        Max Random = 1200;
-                    }
-                }
-            }
-
-            Set Pitch Event
-            {
-                Event Header
-                {
-                    Timestamp = 5000;
-                    Relative = 0;
-                    Random Recurrence = 0;
-                    Random Offset = 0;
-                }
-
-                Equation
-                {
-                    Operator = 1;
-
-                    Operand
-                    {
-                        Min Random = -1200;
-                        Max Random = 1200;
-                    }
-                }
-            }
-
-            Set Pitch Event
-            {
-                Event Header
-                {
-                    Timestamp = 6000;
+                    Timestamp = 0;
                     Relative = 0;
                     Random Recurrence = 0;
                     Random Offset = 0;
@@ -534,8 +469,8 @@ Sound Bank
 
                 Ramp
                 {
-                    Initial Value = 0.000000;
-                    Slope = 0.100000;
+                    Initial Value = -9600.000000;
+                    Slope = 9.600000;
                     Slope Delta = -0.000000;
                     Duration = 1000;
                 }
@@ -544,13 +479,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::8c26c438-64b4-496a-bbe2-77695421b650;
+                RPC Curve Name = 1::68df467f-b2ef-42cd-b54c-950b8dad2524;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::6f4ff7a1-c3fd-4cd3-983d-7a0ffd966456;
+                RPC Curve Name = 1::e25b5479-998c-48e5-bc8f-3452573d1321;
             }
         }
     }
