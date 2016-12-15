@@ -125,9 +125,10 @@ namespace XactTests
         new XactSound(soundBank1, "Cue 9 (Wind)", true, Keys.O),
         new XactSound(soundBank1, "Cue 9 (Wind)", false, Keys.L),
         new XactSound(soundBank1, "Cue 10 (Pitch)", false, Keys.Z),
-        new XnaSound(whiteNoiseSoundEffect, "Cue 10 (Pitch)", true, false, Keys.X),
-        new XactSound(soundBank2, "Music Cue 1", false, Keys.C),
-        new XactSound(soundBank2, "Music Cue 1", true, Keys.V)
+        new XactSound(soundBank1, "Cue 11 (Volume)", false, Keys.X),
+        new XnaSound(whiteNoiseSoundEffect, "Cue 10 (Pitch)", true, false, Keys.C),
+        new XactSound(soundBank2, "Music Cue 1", false, Keys.V),
+        new XactSound(soundBank2, "Music Cue 1", true, Keys.B)
       };
 #endif
     }
