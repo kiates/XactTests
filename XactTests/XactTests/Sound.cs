@@ -15,14 +15,15 @@ namespace XactTests
 {
   abstract class Sound : IDisposable
   {
+    public static Keys PositionalModifierKey = Keys.LeftControl;
+
     public readonly string Name;
-    public readonly bool Positional;
+    public bool Positional;
     public readonly Keys Key;
 
-    protected Sound(string name, bool positional, Keys key)
+    protected Sound(string name, Keys key)
     {
       Name = name;
-      Positional = positional;
       Key = key;
     }
 
@@ -33,7 +34,7 @@ namespace XactTests
     public abstract bool IsStopped { get; }
     public abstract bool IsDisposed { get; }
     public abstract bool Paused { get; set; }
-    public abstract void Play(AudioListener listener, AudioEmitter emitter);
+    public abstract void Play(AudioListener listener, AudioEmitter emitter, bool positional);
     public abstract void Apply3D(AudioListener listener, AudioEmitter emitter);
 
     public abstract void Stop(AudioStopOptions asAuthored);

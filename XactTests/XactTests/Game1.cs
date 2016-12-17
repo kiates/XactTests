@@ -106,29 +106,19 @@ namespace XactTests
 #else
       cueInfos = new List<Sound>
       {
-        new XactSound(soundBank1, "Cue 1", true, Keys.Q),
-        new XactSound(soundBank1, "Cue 1", false, Keys.A),
-        new XactSound(soundBank1, "Cue 2", true, Keys.W),
-        new XactSound(soundBank1, "Cue 2", false, Keys.S),
-        new XactSound(soundBank1, "Cue 3", true, Keys.E),
-        new XactSound(soundBank1, "Cue 3", false, Keys.D),
-        new XactSound(soundBank1, "Cue 4", true, Keys.R),
-        new XactSound(soundBank1, "Cue 4", false, Keys.F),
-        new XactSound(soundBank1, "Cue 5", true, Keys.T),
-        new XactSound(soundBank1, "Cue 5", false, Keys.G),
-        new XactSound(soundBank1, "Cue 6", true, Keys.Y),
-        new XactSound(soundBank1, "Cue 6", false, Keys.H),
-        new XactSound(soundBank1, "Cue 7", true, Keys.U),
-        new XactSound(soundBank1, "Cue 7", false, Keys.J),
-        new XactSound(soundBank1, "Cue 8 (Doppler)", true, Keys.I),
-        new XactSound(soundBank1, "Cue 8 (Doppler)", false, Keys.K),
-        new XactSound(soundBank1, "Cue 9 (Wind)", true, Keys.O),
-        new XactSound(soundBank1, "Cue 9 (Wind)", false, Keys.L),
-        new XactSound(soundBank1, "Cue 10 (Pitch)", false, Keys.Z),
-        new XactSound(soundBank1, "Cue 11 (Volume)", false, Keys.X),
-        new XnaSound(whiteNoiseSoundEffect, "Cue 10 (Pitch)", true, false, Keys.C),
-        new XactSound(soundBank2, "Music Cue 1", false, Keys.V),
-        new XactSound(soundBank2, "Music Cue 1", true, Keys.B)
+        new XactSound(soundBank1, "Cue 1", Keys.A),
+        new XactSound(soundBank1, "Cue 2", Keys.S),
+        new XactSound(soundBank1, "Cue 2b", Keys.D),
+        new XactSound(soundBank1, "Cue 4", Keys.F),
+        new XactSound(soundBank1, "Cue 5", Keys.G),
+        new XactSound(soundBank1, "Cue 6", Keys.H),
+        new XactSound(soundBank1, "Cue 7", Keys.J),
+        new XactSound(soundBank1, "Cue 8 (Doppler)", Keys.K),
+        new XactSound(soundBank1, "Cue 9 (Wind)", Keys.L),
+        new XactSound(soundBank1, "Cue 10 (Pitch)", Keys.Z),
+        new XactSound(soundBank1, "Cue 11 (Volume)", Keys.X),
+        new XnaSound(whiteNoiseSoundEffect, "Cue 10 (Pitch)", true, Keys.C),
+        new XactSound(soundBank2, "Music Cue 1", Keys.Q),
       };
 #endif
     }
@@ -143,7 +133,18 @@ namespace XactTests
 
     public bool IsKeyPressed(Keys key, Keys modifierKey)
     {
-      return keyboardState.IsKeyDown(modifierKey) && keyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyUp(key);
+      return (keyboardState.IsKeyDown(modifierKey) || (modifierKey == Keys.None && NoModifiersPresseed())) 
+        && keyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyUp(key);
+    }
+
+    public bool NoModifiersPresseed()
+    {
+      return keyboardState.IsKeyUp(Keys.LeftShift)
+             && keyboardState.IsKeyUp(Keys.LeftControl)
+             && keyboardState.IsKeyUp(Keys.LeftAlt)
+             && keyboardState.IsKeyUp(Keys.RightShift)
+             && keyboardState.IsKeyUp(Keys.RightControl)
+             && keyboardState.IsKeyUp(Keys.RightAlt);
     }
 
     public bool IsKeyPressed(Keys key)
@@ -154,6 +155,11 @@ namespace XactTests
     public bool IsKeyReleased(Keys key)
     {
       return keyboardState.IsKeyUp(key) && previousKeyboardState.IsKeyDown(key);
+    }
+
+    public bool IsKeyDown(Keys key)
+    {
+      return keyboardState.IsKeyDown(key);
     }
 
     /// <summary>
@@ -175,10 +181,14 @@ namespace XactTests
         {
           Sound cueSound = cueInfos[i];
 
-          // Start and stop sounds.
           Keys soundEffectKey = cueSound.Key;
+
+          // Prepare, start, and stop sounds.
           if (!cueSound.IsActive || cueSound.IsPrepared)
           {
+            // If the sound isn't active or if it is only prepared.
+
+            // If the prepare modifier is used, then just get the cue in preparation to play, otherwise play the sound.
             if (IsKeyPressed(soundEffectKey, Keys.LeftShift))
             {
               if (cueSound is XactSound)
@@ -189,11 +199,14 @@ namespace XactTests
             }
             else if (IsKeyPressed(soundEffectKey))
             {
-              cueSound.Play(listener, emitter);
+              bool positional = IsKeyDown(Sound.PositionalModifierKey);
+              cueSound.Play(listener, emitter, positional);
             }
           }
           else
           {
+            // The sound is playing.
+
             if (IsKeyPressed(soundEffectKey, Keys.LeftShift))
             {
               cueSound.Paused = !cueSound.Paused;

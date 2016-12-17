@@ -19,8 +19,8 @@ namespace XactTests
     public SoundEffectInstance Instance;
     public bool Looped;
 
-    public XnaSound(SoundEffect soundEffect, string name, bool looped, bool positional, Keys key)
-      : base(name, positional, key)
+    public XnaSound(SoundEffect soundEffect, string name, bool looped, Keys key)
+      : base(name, key)
     {
       this.soundEffect = soundEffect;
       Looped = looped;
@@ -62,7 +62,7 @@ namespace XactTests
       }
     }
 
-    public override void Play(AudioListener listener, AudioEmitter emitter)
+    public override void Play(AudioListener listener, AudioEmitter emitter, bool positional)
     {
       Instance = soundEffect.CreateInstance();
       Instance.IsLooped = Looped;

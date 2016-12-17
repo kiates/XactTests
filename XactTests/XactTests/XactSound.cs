@@ -20,8 +20,8 @@ namespace XactTests
     public readonly SoundBank soundBank;
     public Cue Cue;
 
-    public XactSound(SoundBank soundBank, string name, bool positional, Keys key)
-      : base(name, positional, key)
+    public XactSound(SoundBank soundBank, string name, Keys key)
+      : base(name, key)
     {
       this.soundBank = soundBank;
       Cue = null;
@@ -74,14 +74,16 @@ namespace XactTests
       return Cue;
     }
 
-    public override void Play(AudioListener listener, AudioEmitter emitter)
+    public override void Play(AudioListener listener, AudioEmitter emitter, bool positional)
     {
+      Positional = positional;
+
       if (Cue == null)
       {
         Cue = soundBank.GetCue(Name);
       }
 
-      if (Positional)
+      if (positional)
       {
         Cue.Apply3D(listener, emitter);
       }
