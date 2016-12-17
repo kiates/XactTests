@@ -292,6 +292,62 @@ Global Settings
                 Curve = 0;
             }
         }
+
+        RPC Curve
+        {
+            Name = 2::56084dd4-fd35-489d-afd3-410b8fb1a575;
+            Property = 0;
+            Sound = 0;
+            Line Color = 4282745678;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = AttackTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 8000.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = 2::033595ed-4a0e-44fb-b8f1-e8a0a947cb78;
+            Property = 0;
+            Sound = 0;
+            Line Color = 4293501700;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = ReleaseTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 8000.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+        }
     }
 
     RPC
@@ -411,8 +467,8 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
-    Bank Last Revised Low = 1965853183;
-    Bank Last Revised High = 30561954;
+    Bank Last Revised Low = 4071254864;
+    Bank Last Revised High = 30562259;
 
     Wave
     {
@@ -783,8 +839,8 @@ Sound Bank
 
     Sound
     {
-        Name = Sound 2 (Attack/Release);
-        Volume = -1200;
+        Name = Sound 2 (Attack/Release 2 Tracks);
+        Volume = 0;
         Pitch = 0;
         Priority = 0;
         Comment = No fade in/out.;
@@ -801,7 +857,7 @@ Sound Bank
 
         Track
         {
-            Volume = 0;
+            Volume = -3600;
             Use Filter = 0;
 
             Play Wave Event
@@ -843,6 +899,53 @@ Sound Bank
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
                 RPC Curve Name = 1::d2635d72-3797-4ee1-b357-32ce7df5418a;
+            }
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = Force Field 1;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset 1 (Attack/Release);
+                RPC Curve Name = 2::56084dd4-fd35-489d-afd3-410b8fb1a575;
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset 1 (Attack/Release);
+                RPC Curve Name = 2::033595ed-4a0e-44fb-b8f1-e8a0a947cb78;
             }
         }
     }
@@ -1447,8 +1550,8 @@ Sound Bank
 
     Sound
     {
-        Name = Sound 1 - Volume Ramp;
-        Volume = -1200;
+        Name = Event Stress;
+        Volume = 0;
         Pitch = 0;
         Priority = 0;
 
@@ -1480,14 +1583,6 @@ Sound Bank
                     Random Offset = 0;
                 }
 
-                Volume Variation
-                {
-                    Min = 600;
-                    Max = 600;
-                    Volume = 1;
-                    New Variation On Loop = 1;
-                }
-
                 Wave Entry
                 {
                     Bank Name = Wave Bank 1;
@@ -1511,13 +1606,426 @@ Sound Bank
 
                 Equation
                 {
-                    Operator = 0;
+                    Operator = 1;
 
                     Operand
                     {
-                        Constant = -2400;
+                        Constant = -200;
                     }
                 }
+            }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 2000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = 0;
+                    }
+                }
+            }
+
+            Marker Event
+            {
+                Data = 2;
+
+                Event Header
+                {
+                    Timestamp = 2000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+            }
+
+            Set Volume Event
+            {
+                Event Header
+                {
+                    Timestamp = 3000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = -200;
+                    }
+                }
+            }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 3000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = 100;
+                    }
+                }
+            }
+
+            Marker Event
+            {
+                Data = 3;
+
+                Event Header
+                {
+                    Timestamp = 3000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+            }
+
+            Marker Event
+            {
+                Data = 4;
+
+                Event Header
+                {
+                    Timestamp = 4000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+            }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 4000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = 100;
+                    }
+                }
+            }
+
+            Set Volume Event
+            {
+                Event Header
+                {
+                    Timestamp = 4000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = -200;
+                    }
+                }
+            }
+
+            Set Volume Event
+            {
+                Event Header
+                {
+                    Timestamp = 5000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = -200;
+                    }
+                }
+            }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 5000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = 100;
+                    }
+                }
+            }
+
+            Marker Event
+            {
+                Data = 5;
+
+                Event Header
+                {
+                    Timestamp = 5000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+            }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 6000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = 100;
+                    }
+                }
+            }
+
+            Set Volume Event
+            {
+                Event Header
+                {
+                    Timestamp = 6000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = -200;
+                    }
+                }
+            }
+
+            Marker Event
+            {
+                Data = 6;
+
+                Event Header
+                {
+                    Timestamp = 6000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+            }
+
+            Stop Event
+            {
+                Event Header
+                {
+                    Timestamp = 7000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+            }
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 10000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = WhiteNoise;
+                    Entry Index = 0;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+
+            Stop Event
+            {
+                Stop Cue = 1;
+
+                Event Header
+                {
+                    Timestamp = 15000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+            }
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Comment = This should never play;
+                    Timestamp = 16000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = Force Field 1;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = Sound 2 (Attack/Release 1 Track);
+        Volume = 0;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        RPC Entry
+        {
+            RPC Name = RPC Preset 1 (Attack/Release);
+        }
+
+        Track
+        {
+            Volume = -3600;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = WhiteNoise;
+                    Entry Index = 0;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset 1 (Attack/Release);
+                RPC Curve Name = 1::0aaf8fba-e15a-44f6-86dc-17bdedc948e4;
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset 1 (Attack/Release);
+                RPC Curve Name = 1::d2635d72-3797-4ee1-b357-32ce7df5418a;
             }
         }
     }
@@ -1525,7 +2033,7 @@ Sound Bank
     Cue
     {
         Name = Cue 1;
-        Comment = Linear Fade in/out of Sound 1 Track 1.;
+        Comment = No Fade;
 
         Variation
         {
@@ -1546,7 +2054,7 @@ Sound Bank
     Cue
     {
         Name = Cue 2;
-        Comment = No Fade of Sound 2.;
+        Comment = Linear Fade in/out of Sound 1 Track 1.;
 
         Variation
         {
@@ -1557,8 +2065,8 @@ Sound Bank
 
         Sound Entry
         {
-            Name = Sound 2 (Attack/Release);
-            Index = 3;
+            Name = Sound 2 (Attack/Release 1 Track);
+            Index = 12;
             Weight Min = 0;
             Weight Max = 255;
         }
@@ -1773,8 +2281,28 @@ Sound Bank
 
         Sound Entry
         {
-            Name = Sound 1 - Volume Ramp;
+            Name = Event Stress;
             Index = 11;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = Cue 1b;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Sound 2 (Attack/Release 2 Tracks);
+            Index = 3;
             Weight Min = 0;
             Weight Max = 255;
         }
