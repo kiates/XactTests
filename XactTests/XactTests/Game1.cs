@@ -101,7 +101,7 @@ namespace XactTests
 #if XACT_SIMPLE
       cueInfos = new List<Sound>
       {
-        new XactSound(soundBank1, "Cue 1", false, Keys.A)
+        new XactSound(soundBank1, "Cue 1", Keys.A)
       };
 #else
       cueInfos = new List<Sound>
