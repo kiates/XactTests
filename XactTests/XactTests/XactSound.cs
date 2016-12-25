@@ -111,7 +111,12 @@ namespace XactTests
       Cue = null;
     }
 
-    public override void DrawCueInfo(SpriteBatch spriteBatch, SpriteFont font,
+	  public override object Clone()
+	  {
+		  return new XactSound(soundBank, Name, Key);
+	  }
+
+	  public override void DrawCueInfo(SpriteBatch spriteBatch, SpriteFont font,
       ref Vector2 position)
     {
       float numCueInstances = 0;

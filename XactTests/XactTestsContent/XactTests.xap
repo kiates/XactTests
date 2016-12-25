@@ -239,7 +239,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::0aaf8fba-e15a-44f6-86dc-17bdedc948e4;
+            Name = 1::64a4a4fb-808e-4209-9bbd-a2abd61c4088;
             Property = 0;
             Sound = 0;
             Line Color = 4285961702;
@@ -267,7 +267,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::d2635d72-3797-4ee1-b357-32ce7df5418a;
+            Name = 1::832488d1-ced7-438d-95c8-cbba5eaf328a;
             Property = 0;
             Sound = 0;
             Line Color = 4291057000;
@@ -295,7 +295,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 2::56084dd4-fd35-489d-afd3-410b8fb1a575;
+            Name = 2::11c16005-5821-4feb-b0f1-72e1bd56d4ff;
             Property = 0;
             Sound = 0;
             Line Color = 4282745678;
@@ -323,7 +323,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 2::033595ed-4a0e-44fb-b8f1-e8a0a947cb78;
+            Name = 2::fb32e245-bd1a-4a7e-90a7-ee2c01bb442c;
             Property = 0;
             Sound = 0;
             Line Color = 4293501700;
@@ -356,7 +356,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = Sound::03268ec8-c838-4f97-af7c-9c9f6fa41fc4;
+            Name = Sound::cb64db76-2bc8-4ad5-8909-7f619d9cd250;
             Property = 1;
             Sound = 1;
             Line Color = 4283077921;
@@ -389,7 +389,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = Sound::cac5627e-e0bc-45c9-80fa-bcf1878a6af6;
+            Name = Sound::22a26126-da01-4f74-a36a-020251ed260f;
             Property = 0;
             Sound = 1;
             Line Color = 4285970029;
@@ -467,8 +467,8 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
-    Bank Last Revised Low = 4071254864;
-    Bank Last Revised High = 30562259;
+    Bank Last Revised Low = 2034457589;
+    Bank Last Revised High = 30563867;
 
     Wave
     {
@@ -676,13 +676,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::0aaf8fba-e15a-44f6-86dc-17bdedc948e4;
+                RPC Curve Name = 1::64a4a4fb-808e-4209-9bbd-a2abd61c4088;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::d2635d72-3797-4ee1-b357-32ce7df5418a;
+                RPC Curve Name = 1::832488d1-ced7-438d-95c8-cbba5eaf328a;
             }
         }
     }
@@ -826,13 +826,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::0aaf8fba-e15a-44f6-86dc-17bdedc948e4;
+                RPC Curve Name = 1::64a4a4fb-808e-4209-9bbd-a2abd61c4088;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::d2635d72-3797-4ee1-b357-32ce7df5418a;
+                RPC Curve Name = 1::832488d1-ced7-438d-95c8-cbba5eaf328a;
             }
         }
     }
@@ -857,7 +857,7 @@ Sound Bank
 
         Track
         {
-            Volume = -3600;
+            Volume = -2400;
             Use Filter = 0;
 
             Play Wave Event
@@ -892,13 +892,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::0aaf8fba-e15a-44f6-86dc-17bdedc948e4;
+                RPC Curve Name = 1::64a4a4fb-808e-4209-9bbd-a2abd61c4088;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::d2635d72-3797-4ee1-b357-32ce7df5418a;
+                RPC Curve Name = 1::832488d1-ced7-438d-95c8-cbba5eaf328a;
             }
         }
 
@@ -939,13 +939,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 2::56084dd4-fd35-489d-afd3-410b8fb1a575;
+                RPC Curve Name = 2::11c16005-5821-4feb-b0f1-72e1bd56d4ff;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 2::033595ed-4a0e-44fb-b8f1-e8a0a947cb78;
+                RPC Curve Name = 2::fb32e245-bd1a-4a7e-90a7-ee2c01bb442c;
             }
         }
     }
@@ -1274,6 +1274,25 @@ Sound Bank
                     }
                 }
             }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 6000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Ramp
+                {
+                    Initial Value = -1200.000000;
+                    Slope = 0.480000;
+                    Slope Delta = -0.000000;
+                    Duration = 5000;
+                }
+            }
         }
     }
 
@@ -1489,13 +1508,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::0aaf8fba-e15a-44f6-86dc-17bdedc948e4;
+                RPC Curve Name = 1::64a4a4fb-808e-4209-9bbd-a2abd61c4088;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::d2635d72-3797-4ee1-b357-32ce7df5418a;
+                RPC Curve Name = 1::832488d1-ced7-438d-95c8-cbba5eaf328a;
             }
         }
     }
@@ -1594,24 +1613,16 @@ Sound Bank
                 }
             }
 
-            Set Volume Event
+            Marker Event
             {
+                Data = 2;
+
                 Event Header
                 {
                     Timestamp = 2000;
                     Relative = 0;
                     Random Recurrence = 0;
                     Random Offset = 0;
-                }
-
-                Equation
-                {
-                    Operator = 1;
-
-                    Operand
-                    {
-                        Constant = -200;
-                    }
                 }
             }
 
@@ -1636,24 +1647,11 @@ Sound Bank
                 }
             }
 
-            Marker Event
-            {
-                Data = 2;
-
-                Event Header
-                {
-                    Timestamp = 2000;
-                    Relative = 0;
-                    Random Recurrence = 0;
-                    Random Offset = 0;
-                }
-            }
-
             Set Volume Event
             {
                 Event Header
                 {
-                    Timestamp = 3000;
+                    Timestamp = 2000;
                     Relative = 0;
                     Random Recurrence = 0;
                     Random Offset = 0;
@@ -1687,6 +1685,27 @@ Sound Bank
                     Operand
                     {
                         Constant = 100;
+                    }
+                }
+            }
+
+            Set Volume Event
+            {
+                Event Header
+                {
+                    Timestamp = 3000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = -200;
                     }
                 }
             }
@@ -1759,27 +1778,6 @@ Sound Bank
                 }
             }
 
-            Set Volume Event
-            {
-                Event Header
-                {
-                    Timestamp = 5000;
-                    Relative = 0;
-                    Random Recurrence = 0;
-                    Random Offset = 0;
-                }
-
-                Equation
-                {
-                    Operator = 1;
-
-                    Operand
-                    {
-                        Constant = -200;
-                    }
-                }
-            }
-
             Set Pitch Event
             {
                 Event Header
@@ -1797,6 +1795,27 @@ Sound Bank
                     Operand
                     {
                         Constant = 100;
+                    }
+                }
+            }
+
+            Set Volume Event
+            {
+                Event Header
+                {
+                    Timestamp = 5000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = -200;
                     }
                 }
             }
@@ -1811,48 +1830,6 @@ Sound Bank
                     Relative = 0;
                     Random Recurrence = 0;
                     Random Offset = 0;
-                }
-            }
-
-            Set Pitch Event
-            {
-                Event Header
-                {
-                    Timestamp = 6000;
-                    Relative = 0;
-                    Random Recurrence = 0;
-                    Random Offset = 0;
-                }
-
-                Equation
-                {
-                    Operator = 1;
-
-                    Operand
-                    {
-                        Constant = 100;
-                    }
-                }
-            }
-
-            Set Volume Event
-            {
-                Event Header
-                {
-                    Timestamp = 6000;
-                    Relative = 0;
-                    Random Recurrence = 0;
-                    Random Offset = 0;
-                }
-
-                Equation
-                {
-                    Operator = 1;
-
-                    Operand
-                    {
-                        Constant = -200;
-                    }
                 }
             }
 
@@ -1866,6 +1843,48 @@ Sound Bank
                     Relative = 0;
                     Random Recurrence = 0;
                     Random Offset = 0;
+                }
+            }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 6000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = 100;
+                    }
+                }
+            }
+
+            Set Volume Event
+            {
+                Event Header
+                {
+                    Timestamp = 6000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = -200;
+                    }
                 }
             }
 
@@ -2019,13 +2038,459 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::0aaf8fba-e15a-44f6-86dc-17bdedc948e4;
+                RPC Curve Name = 1::64a4a4fb-808e-4209-9bbd-a2abd61c4088;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::d2635d72-3797-4ee1-b357-32ce7df5418a;
+                RPC Curve Name = 1::832488d1-ced7-438d-95c8-cbba5eaf328a;
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = Pitch Ramp Types;
+        Volume = -1200;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = Force Field 1;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Ramp
+                {
+                    Initial Value = -1200.000000;
+                    Slope = 0.240000;
+                    Slope Delta = -0.000000;
+                    Duration = 10000;
+                }
+            }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 10000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Ramp
+                {
+                    Initial Value = 1200.000000;
+                    Slope = -0.240000;
+                    Slope Delta = 0.000000;
+                    Duration = 10000;
+                }
+            }
+
+            Stop Event
+            {
+                Stop Cue = 1;
+
+                Event Header
+                {
+                    Timestamp = 20000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = Volume Ramp Types;
+        Volume = -1200;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = Force Field 1;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+
+            Set Volume Event
+            {
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Ramp
+                {
+                    Initial Value = -2400.000000;
+                    Slope = 0.240000;
+                    Slope Delta = -0.000000;
+                    Duration = 10000;
+                }
+            }
+
+            Set Volume Event
+            {
+                Event Header
+                {
+                    Timestamp = 10000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Ramp
+                {
+                    Initial Value = 0.000000;
+                    Slope = -0.240000;
+                    Slope Delta = 0.000000;
+                    Duration = 10000;
+                }
+            }
+
+            Stop Event
+            {
+                Stop Cue = 1;
+
+                Event Header
+                {
+                    Timestamp = 20000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = Volume & Pitch Ramp Types;
+        Volume = -1200;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Ramp
+                {
+                    Initial Value = -1200.000000;
+                    Slope = 0.240000;
+                    Slope Delta = -0.000000;
+                    Duration = 10000;
+                }
+            }
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = Force Field 1;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+
+            Set Volume Event
+            {
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Ramp
+                {
+                    Initial Value = -2400.000000;
+                    Slope = 0.240000;
+                    Slope Delta = -0.000000;
+                    Duration = 10000;
+                }
+            }
+
+            Set Volume Event
+            {
+                Event Header
+                {
+                    Timestamp = 10000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Ramp
+                {
+                    Initial Value = 0.000000;
+                    Slope = -0.240000;
+                    Slope Delta = 0.000000;
+                    Duration = 10000;
+                }
+            }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 10000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Ramp
+                {
+                    Initial Value = 1200.000000;
+                    Slope = -0.240000;
+                    Slope Delta = 0.000000;
+                    Duration = 10000;
+                }
+            }
+
+            Stop Event
+            {
+                Stop Cue = 1;
+
+                Event Header
+                {
+                    Timestamp = 20000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = Repeating Volume & Pitch ;
+        Volume = 600;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Equation
+                {
+                    Operator = 0;
+
+                    Operand
+                    {
+                        Constant = 1200;
+                    }
+                }
+            }
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = Force Field 1;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+
+            Set Pitch Event
+            {
+                Event Header
+                {
+                    Timestamp = 1000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Recurrence
+                {
+                    Count = 12;
+                    Frequency = 500;
+                    Beats Per Minute = 0;
+                    Beats Per Minute Frequency = 0.000000;
+                }
+
+                Equation
+                {
+                    Operator = 1;
+
+                    Operand
+                    {
+                        Constant = -100;
+                    }
+                }
+            }
+
+            Stop Event
+            {
+                Stop Cue = 1;
+
+                Event Header
+                {
+                    Timestamp = 10000;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
             }
         }
     }
@@ -2303,6 +2768,119 @@ Sound Bank
         {
             Name = Sound 2 (Attack/Release 2 Tracks);
             Index = 3;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = Pitch Ramps;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Pitch Ramp Types;
+            Index = 13;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = Volume Ramps;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Volume Ramp Types;
+            Index = 14;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = Volume & Pitch Ramps;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Volume & Pitch Ramp Types;
+            Index = 15;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = Instance Limiting;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Volume & Pitch Ramp Types;
+            Index = 15;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+
+        Instance Limit
+        {
+            Max Instances = 1;
+            Behavior = 2;
+
+            Crossfade
+            {
+                Fade In = 500;
+                Fade Out = 500;
+                Crossfade Type = 0;
+            }
+        }
+    }
+
+    Cue
+    {
+        Name = Repeating Volume & Pitch;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Repeating Volume & Pitch ;
+            Index = 16;
             Weight Min = 0;
             Weight Max = 255;
         }

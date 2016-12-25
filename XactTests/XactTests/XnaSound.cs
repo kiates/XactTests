@@ -4,6 +4,7 @@
 
 using System;
 using System.Diagnostics.Contracts;
+using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
@@ -27,27 +28,43 @@ namespace XactTests
       Instance = null;
     }
 
-    public override bool IsActive { get { return Instance != null; } }
+		public bool IsCreated
+		{
+			get
+			{
+				return false;
+			}
+		}
 
-    public override bool IsPrepared { get { return IsActive; } }
+		public override bool IsActive { get { return Instance != null; } }
+
+		public bool IsPreparing
+		{
+			get
+			{
+				return false;
+			}
+		}
+
+		public override bool IsPrepared { get { return false; } }
 
     public override bool IsPlaying
     {
-      get { return Instance != null && Instance.State == SoundState.Playing; }
+      get { return Instance != null && (Instance.State == SoundState.Playing || Instance.State == SoundState.Paused); }
     }
 
     public override bool IsStopping { get { return false; } }
 
     public override bool IsStopped
     {
-      get { return Instance == null || Instance.State == SoundState.Stopped; }
+      get { return Instance != null && !IsDisposed && Instance.State == SoundState.Stopped; }
     }
 
-    public override bool IsDisposed { get {return Instance.IsDisposed; } }
+    public override bool IsDisposed { get {return IsActive && Instance.IsDisposed; } }
 
     public override bool Paused { get
     {
-      return Instance.State == SoundState.Paused;
+      return IsActive && Instance.State == SoundState.Paused;
     }
       set
       {
@@ -81,7 +98,12 @@ namespace XactTests
 
     public override void Dispose()
     {
-      Instance.Dispose();
+	    if (IsPlaying)
+	    {
+		    Instance.Stop(true);
+	    }
+
+	    Instance.Dispose();
     }
 
     public override void Deactivate()
@@ -89,7 +111,12 @@ namespace XactTests
       Instance = null;
     }
 
-    public override void DrawCueInfo(SpriteBatch spriteBatch, SpriteFont font,
+	  public override object Clone()
+	  {
+		  return new XnaSound(soundEffect, Name, Looped, Key);
+	  }
+
+	  public override void DrawCueInfo(SpriteBatch spriteBatch, SpriteFont font,
       ref Vector2 position)
     {
       float volume = 0;
@@ -116,7 +143,8 @@ namespace XactTests
       {
         clearColor = Color.DarkGray;
       }
-
+			
+			/*
       spriteBatch.DrawString(font,
         String.Format(
           "XnaSoundEffect: Name='{0}', IsPlaying={1}, IsStopping={2}, IsStopped={3}",
@@ -127,6 +155,27 @@ namespace XactTests
         String.Format("Volume={0}, Pitch={1}, Pan={2}", volume, pitch, pan),
         position, clearColor);
       position.Y = position.Y + font.LineSpacing;
-    }
+*/
+
+			StringBuilder sb = new StringBuilder(1000);
+
+			sb.Clear();
+			sb.Append(
+				String.Format("XactCue: Nm='{0}',Crtd={1},Prpng={2},Prpd={3},Plyng={4},Psd={5},Stpng={6},Stpd={7},Dspd={8},Actv={9}",
+					Name, IsCreated, IsPreparing, IsPrepared, IsPlaying, Paused, IsStopping, IsStopped, IsDisposed, IsActive));
+			spriteBatch.DrawString(font, sb.ToString(), position, clearColor);
+			position.Y = position.Y + font.LineSpacing;
+
+			/*
+			sb.Clear();
+			sb.Append(
+				String.Format(
+					"#Cues={0},AtkTm={1},RlsTm={2},DpSclr={3},Ang={4},Dstnc={5}",
+					numCueInstances, attackTime, releaseTime, dopplerPitchScalar,
+					orientationAngle, distance));
+			spriteBatch.DrawString(font, sb.ToString(), position, clearColor);
+			position.Y = position.Y + font.LineSpacing;
+			*/
+		}
   }
 }

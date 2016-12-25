@@ -13,11 +13,16 @@ using Microsoft.Xna.Framework.Input;
 
 namespace XactTests
 {
-  abstract class Sound : IDisposable
+	public abstract class Sound : ICloneable, IDisposable
   {
-    public static Keys PositionalModifierKey = Keys.LeftControl;
+		// Inactive sound modifiers.
+		public static Keys PositionalModifierKey = Keys.LeftControl;
 
-    public readonly string Name;
+		// Active sound modifiers.
+		public static Keys PauseModifierKey = Keys.LeftShift;
+		public static Keys StopModifierKey = Keys.LeftAlt;
+
+		public readonly string Name;
     public bool Positional;
     public readonly Keys Key;
 
@@ -44,5 +49,6 @@ namespace XactTests
       ref Vector2 position);
 
     public abstract void Deactivate();
+		public abstract object Clone();
   }
 }
