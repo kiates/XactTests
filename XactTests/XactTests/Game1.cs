@@ -424,7 +424,7 @@ namespace XactTests
 						Sounds cueInfo = cueInfos[i];
 						foreach (Sound cueSound in cueInfo.ActiveSounds)
 						{
-							if (cueSound.IsActive
+							if (cueSound.IsActive && !cueSound.IsDisposed
 							    && cueSound.Positional)
 							{
 								cueSound.Apply3D(listener, emitter);
