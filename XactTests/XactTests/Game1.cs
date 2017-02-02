@@ -167,9 +167,9 @@ namespace XactTests
 				};
 
 #if XACT_SIMPLE
-      audio = new AudioEngine(Path.Combine(Content.RootDirectory, "XactTestsSimple.xgs"));
-      waveBank1 = new WaveBank(audio, Path.Combine(Content.RootDirectory, "Wave Bank 3.xwb"));
-      soundBank1 = new SoundBank(audio, Path.Combine(Content.RootDirectory, "Sound Bank 3.xsb"));
+			audio = new AudioEngine(Path.Combine(Content.RootDirectory, "XactTestsSimple.xgs"));
+			waveBank1 = new WaveBank(audio, Path.Combine(Content.RootDirectory, "Wave Bank 3.xwb"));
+			soundBank1 = new SoundBank(audio, Path.Combine(Content.RootDirectory, "Sound Bank 3.xsb"));
 #else
 				audio = new AudioEngine(
 					Path.Combine(Content.RootDirectory, "XactTests.xgs"));
@@ -216,16 +216,17 @@ namespace XactTests
 				debugFont = Content.Load<SpriteFont>("DebugFont");
 
 #if XACT_SIMPLE
-      cueInfos = new List<Sounds>
-      {
-        new Sounds(new XactSound(soundBank1, "Cue 1", Keys.A))
-      };
+			cueInfos = new List<Sounds>
+			{
+				new Sounds(new XactSound(soundBank1, "Cue 1", Keys.A))
+			};
 #else
 				cueInfos = new List<Sounds>
 				{
 					new Sounds(new XactSound(soundBank1, "Cue 1", Keys.A)),
 					new Sounds(new XactSound(soundBank1, "Cue 2", Keys.S)),
 					new Sounds(new XactSound(soundBank1, "Cue 2b", Keys.D)),
+					//new Sounds(new XactSound(soundBank1, "Cue 2c", Keys.D)),
 					new Sounds(new XactSound(soundBank1, "Cue 4", Keys.F)),
 					new Sounds(new XactSound(soundBank1, "Cue 5", Keys.G)),
 					new Sounds(new XactSound(soundBank1, "Cue 6", Keys.H)),
@@ -257,18 +258,18 @@ namespace XactTests
 			public bool IsKeyPressed(Keys key, Keys modifierKey)
 			{
 				return (keyboardState.IsKeyDown(modifierKey)
-				        || (modifierKey == Keys.None && NoModifiersPresseed()))
-				       && keyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyUp(key);
+								|| (modifierKey == Keys.None && NoModifiersPresseed()))
+							 && keyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyUp(key);
 			}
 
 			public bool NoModifiersPresseed()
 			{
 				return keyboardState.IsKeyUp(Keys.LeftShift)
-				       && keyboardState.IsKeyUp(Keys.LeftControl)
-				       && keyboardState.IsKeyUp(Keys.LeftAlt)
-				       && keyboardState.IsKeyUp(Keys.RightShift)
-				       && keyboardState.IsKeyUp(Keys.RightControl)
-				       && keyboardState.IsKeyUp(Keys.RightAlt);
+							 && keyboardState.IsKeyUp(Keys.LeftControl)
+							 && keyboardState.IsKeyUp(Keys.LeftAlt)
+							 && keyboardState.IsKeyUp(Keys.RightShift)
+							 && keyboardState.IsKeyUp(Keys.RightControl)
+							 && keyboardState.IsKeyUp(Keys.RightAlt);
 			}
 
 			public bool IsKeyPressed(Keys key)
@@ -294,7 +295,7 @@ namespace XactTests
 			{
 				// Allows the game to exit
 				if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
-				    || IsKeyPressed(Keys.Escape))
+						|| IsKeyPressed(Keys.Escape))
 					Exit();
 
 				// Handle input.
@@ -311,7 +312,7 @@ namespace XactTests
 
 						// Prepare, start, and stop sounds.
 						if (!nextSound.IsActive
-						    || nextSound.IsPrepared)
+								|| nextSound.IsPrepared)
 						{
 							// If the sound isn't active or if it is only prepared.
 
@@ -425,7 +426,7 @@ namespace XactTests
 						foreach (Sound cueSound in cueInfo.ActiveSounds)
 						{
 							if (cueSound.IsActive && !cueSound.IsDisposed
-							    && cueSound.Positional)
+									&& cueSound.Positional)
 							{
 								cueSound.Apply3D(listener, emitter);
 							}

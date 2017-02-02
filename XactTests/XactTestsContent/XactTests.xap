@@ -239,7 +239,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::13277f2c-086d-4eeb-bc0a-7f0adff50acf;
+            Name = 1::93e37e82-65fd-4393-b9e5-b6f83b36bf75;
             Property = 0;
             Sound = 0;
             Line Color = 4285961702;
@@ -267,7 +267,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::92d25b7e-2861-467d-9f51-e107ff033468;
+            Name = 1::8b3d7326-786c-4f28-bf1a-547b516c6f5f;
             Property = 0;
             Sound = 0;
             Line Color = 4291057000;
@@ -295,7 +295,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 2::df05f7d1-d2c7-467a-9e27-8e835aa82ce4;
+            Name = 2::ce03fc2d-0ab1-4ace-bd71-68330bcf3cac;
             Property = 0;
             Sound = 0;
             Line Color = 4282745678;
@@ -323,7 +323,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 2::f81c8872-3fc2-483a-95e1-2a348c73202a;
+            Name = 2::1e8c8b62-e22d-4f4f-a8ba-d03b3d15bbf5;
             Property = 0;
             Sound = 0;
             Line Color = 4293501700;
@@ -351,7 +351,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 2::28bbc6ad-7a6f-42a3-8d9b-9ed543e545c7;
+            Name = 2::00a601dd-a56f-4d1e-a288-bedb4c15ec64;
             Property = 1;
             Sound = 0;
             Line Color = 4283697813;
@@ -379,7 +379,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 2::ac5d9f7b-db75-41ec-b174-df5fe58687da;
+            Name = 2::33e1fa02-fb46-49ce-9dcb-80cc72bfa059;
             Property = 1;
             Sound = 0;
             Line Color = 4291945036;
@@ -407,7 +407,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 3::c7ad69cd-2535-4998-aa69-1be35c1a3c3a;
+            Name = 3::36ffb9ca-5892-4ba6-a740-3cce2a6eb6e2;
             Property = 1;
             Sound = 0;
             Line Color = 4283702010;
@@ -435,7 +435,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 3::e5434fdd-7086-42df-886f-c0419fe511c4;
+            Name = 3::ea1cdb55-db55-469c-b033-033159fc06e5;
             Property = 1;
             Sound = 0;
             Line Color = 4287117922;
@@ -463,7 +463,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 3::97ae9363-44c1-4650-bbc7-b90bd92eef79;
+            Name = 3::59e9323d-88de-41c7-8118-04ef5e3e47be;
             Property = 0;
             Sound = 0;
             Line Color = 4287228809;
@@ -498,7 +498,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 3::73dd96e6-787e-41bf-90a0-2b5dc5f7b2c5;
+            Name = 3::774e3790-19e2-4306-8628-47076d233bc7;
             Property = 0;
             Sound = 0;
             Line Color = 4283466121;
@@ -531,7 +531,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 2::3cb71ef5-4803-4513-9d12-f34f345d443c;
+            Name = 2::f0c475e5-725f-4671-93a1-871268c1bce2;
             Property = 1;
             Sound = 0;
             Line Color = 4283077921;
@@ -559,7 +559,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::649fe642-776a-4fdb-badf-d5db4741b30a;
+            Name = 1::ea6d605c-35e0-45fe-b991-c475089ce20a;
             Property = 1;
             Sound = 0;
             Line Color = 4291042484;
@@ -587,7 +587,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::f3188a42-5fad-4150-b57b-19543483d7cb;
+            Name = 1::de5677c7-4147-4360-941c-9c241f726a1e;
             Property = 0;
             Sound = 0;
             Line Color = 4283783811;
@@ -615,7 +615,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 3::795bba37-1a0e-4183-9ab9-e0abb9df43a2;
+            Name = 3::c52413ec-5632-4e49-9e5a-1698fd491491;
             Property = 1;
             Sound = 0;
             Line Color = 4287982040;
@@ -643,7 +643,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 3::02839b47-91ab-465b-ade7-9a1b3988a53e;
+            Name = 3::2709b16a-8a12-4320-8640-baebbcc5356f;
             Property = 0;
             Sound = 0;
             Line Color = 4279713928;
@@ -676,7 +676,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::a129f228-c53f-4179-9289-b0f93bda3625;
+            Name = 1::789adf0f-7776-4c3a-95e2-0c74cbc4d3f5;
             Property = 0;
             Sound = 0;
             Line Color = 4285970029;
@@ -737,7 +737,7 @@ Global Settings
 
         RPC Curve
         {
-            Name = Sound::004a044f-e9b5-4d44-8694-374d0ee8f29c;
+            Name = Sound::d50e305c-b679-4d8c-b0ce-6bc32193876b;
             Property = 1;
             Sound = 1;
             Line Color = 4285382865;
@@ -759,6 +759,67 @@ Global Settings
             {
                 X = 682.666687;
                 Y = 0.000000;
+                Curve = 0;
+            }
+        }
+    }
+
+    RPC
+    {
+        Name = RPC Preset (Attack 2 tracks);
+
+        RPC Curve
+        {
+            Name = 1::caed83b0-e11f-43b8-b6a0-4fd9d94c3844;
+            Property = 0;
+            Sound = 0;
+            Line Color = 4290066922;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = AttackTime;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2000.000000;
+                Y = -1200.000000;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = 2::790d0ec7-de08-48a2-8d9b-41b0a9f7e4a2;
+            Property = 0;
+            Sound = 0;
+            Line Color = 4283582085;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = AttackTime;
+            }
+
+            RPC Point
+            {
+                X = 2000.000000;
+                Y = -9600.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 4000.000000;
+                Y = -1200.000000;
                 Curve = 0;
             }
         }
@@ -787,14 +848,8 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
-    Xbox Bank Last Modified Low = 0;
-    Xbox Bank Last Modified High = 0;
-    PC Bank Last Modified Low = 0;
-    PC Bank Last Modified High = 0;
-    Header Last Modified Low = 0;
-    Header Last Modified High = 0;
-    Bank Last Revised Low = 173583101;
-    Bank Last Revised High = 30565063;
+    Bank Last Revised Low = 1699062289;
+    Bank Last Revised High = 30571922;
 
     Wave
     {
@@ -814,8 +869,8 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 1179758447;
-            Last Modified High = 30559618;
+            Last Modified Low = 3937384448;
+            Last Modified High = 30051137;
         }
     }
 
@@ -837,8 +892,8 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 1179728586;
-            Last Modified High = 30559618;
+            Last Modified Low = 2366584704;
+            Last Modified High = 30128626;
         }
     }
 
@@ -916,8 +971,6 @@ Sound Bank
     Windows File = Win\Sound Bank 1.xsb;
     Xbox Bank Path Edited = 0;
     Windows Bank Path Edited = 0;
-    Header Last Modified High = 0;
-    Header Last Modified Low = 0;
 
     Sound
     {
@@ -1004,13 +1057,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::13277f2c-086d-4eeb-bc0a-7f0adff50acf;
+                RPC Curve Name = 1::93e37e82-65fd-4393-b9e5-b6f83b36bf75;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::92d25b7e-2861-467d-9f51-e107ff033468;
+                RPC Curve Name = 1::8b3d7326-786c-4f28-bf1a-547b516c6f5f;
             }
         }
     }
@@ -1154,13 +1207,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::13277f2c-086d-4eeb-bc0a-7f0adff50acf;
+                RPC Curve Name = 1::93e37e82-65fd-4393-b9e5-b6f83b36bf75;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::92d25b7e-2861-467d-9f51-e107ff033468;
+                RPC Curve Name = 1::8b3d7326-786c-4f28-bf1a-547b516c6f5f;
             }
         }
     }
@@ -1219,13 +1272,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::13277f2c-086d-4eeb-bc0a-7f0adff50acf;
+                RPC Curve Name = 1::93e37e82-65fd-4393-b9e5-b6f83b36bf75;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::92d25b7e-2861-467d-9f51-e107ff033468;
+                RPC Curve Name = 1::8b3d7326-786c-4f28-bf1a-547b516c6f5f;
             }
         }
 
@@ -1266,25 +1319,25 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 2::df05f7d1-d2c7-467a-9e27-8e835aa82ce4;
+                RPC Curve Name = 2::ce03fc2d-0ab1-4ace-bd71-68330bcf3cac;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 2::f81c8872-3fc2-483a-95e1-2a348c73202a;
+                RPC Curve Name = 2::1e8c8b62-e22d-4f4f-a8ba-d03b3d15bbf5;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 2::28bbc6ad-7a6f-42a3-8d9b-9ed543e545c7;
+                RPC Curve Name = 2::00a601dd-a56f-4d1e-a288-bedb4c15ec64;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 2::ac5d9f7b-db75-41ec-b174-df5fe58687da;
+                RPC Curve Name = 2::33e1fa02-fb46-49ce-9dcb-80cc72bfa059;
             }
         }
 
@@ -1325,25 +1378,25 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 3::97ae9363-44c1-4650-bbc7-b90bd92eef79;
+                RPC Curve Name = 3::59e9323d-88de-41c7-8118-04ef5e3e47be;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 3::73dd96e6-787e-41bf-90a0-2b5dc5f7b2c5;
+                RPC Curve Name = 3::774e3790-19e2-4306-8628-47076d233bc7;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 3::c7ad69cd-2535-4998-aa69-1be35c1a3c3a;
+                RPC Curve Name = 3::36ffb9ca-5892-4ba6-a740-3cce2a6eb6e2;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 3::e5434fdd-7086-42df-886f-c0419fe511c4;
+                RPC Curve Name = 3::ea1cdb55-db55-469c-b033-033159fc06e5;
             }
         }
     }
@@ -1753,19 +1806,19 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 2 (Doppler);
-                RPC Curve Name = 1::f3188a42-5fad-4150-b57b-19543483d7cb;
+                RPC Curve Name = 1::de5677c7-4147-4360-941c-9c241f726a1e;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 2 (Doppler);
-                RPC Curve Name = 1::649fe642-776a-4fdb-badf-d5db4741b30a;
+                RPC Curve Name = 1::ea6d605c-35e0-45fe-b991-c475089ce20a;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 3 (Distance);
-                RPC Curve Name = 1::a129f228-c53f-4179-9289-b0f93bda3625;
+                RPC Curve Name = 1::789adf0f-7776-4c3a-95e2-0c74cbc4d3f5;
             }
         }
 
@@ -1805,7 +1858,7 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 2 (Doppler);
-                RPC Curve Name = 2::3cb71ef5-4803-4513-9d12-f34f345d443c;
+                RPC Curve Name = 2::f0c475e5-725f-4671-93a1-871268c1bce2;
             }
         }
 
@@ -1845,13 +1898,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 2 (Doppler);
-                RPC Curve Name = 3::02839b47-91ab-465b-ade7-9a1b3988a53e;
+                RPC Curve Name = 3::2709b16a-8a12-4320-8640-baebbcc5356f;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 2 (Doppler);
-                RPC Curve Name = 3::795bba37-1a0e-4183-9ab9-e0abb9df43a2;
+                RPC Curve Name = 3::c52413ec-5632-4e49-9e5a-1698fd491491;
             }
         }
     }
@@ -2010,13 +2063,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::13277f2c-086d-4eeb-bc0a-7f0adff50acf;
+                RPC Curve Name = 1::93e37e82-65fd-4393-b9e5-b6f83b36bf75;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::92d25b7e-2861-467d-9f51-e107ff033468;
+                RPC Curve Name = 1::8b3d7326-786c-4f28-bf1a-547b516c6f5f;
             }
         }
     }
@@ -2540,13 +2593,13 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::13277f2c-086d-4eeb-bc0a-7f0adff50acf;
+                RPC Curve Name = 1::93e37e82-65fd-4393-b9e5-b6f83b36bf75;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1 (Attack/Release);
-                RPC Curve Name = 1::92d25b7e-2861-467d-9f51-e107ff033468;
+                RPC Curve Name = 1::8b3d7326-786c-4f28-bf1a-547b516c6f5f;
             }
         }
     }
@@ -2997,6 +3050,106 @@ Sound Bank
         }
     }
 
+    Sound
+    {
+        Name = Sound 2 (Attack/Release 2 Tracks);
+        Volume = 600;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        RPC Entry
+        {
+            RPC Name = RPC Preset (Attack 2 tracks);
+        }
+
+        Track
+        {
+            Volume = -2400;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = WhiteNoise;
+                    Entry Index = 0;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset (Attack 2 tracks);
+                RPC Curve Name = 1::caed83b0-e11f-43b8-b6a0-4fd9d94c3844;
+            }
+        }
+
+        Track
+        {
+            Volume = -600;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = Force Field 1;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset (Attack 2 tracks);
+                RPC Curve Name = 2::790d0ec7-de08-48a2-8d9b-41b0a9f7e4a2;
+            }
+        }
+    }
+
     Cue
     {
         Name = Cue 1;
@@ -3383,6 +3536,26 @@ Sound Bank
         {
             Name = Repeating Volume & Pitch;
             Index = 16;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = Cue 2c;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Sound 2 (Attack/Release 2 Tracks);
+            Index = 17;
             Weight Min = 0;
             Weight Max = 255;
         }
