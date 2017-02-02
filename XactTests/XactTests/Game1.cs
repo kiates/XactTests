@@ -216,9 +216,9 @@ namespace XactTests
 				debugFont = Content.Load<SpriteFont>("DebugFont");
 
 #if XACT_SIMPLE
-      cueInfos = new List<Sound>
+      cueInfos = new List<Sounds>
       {
-        new XactSound(soundBank1, "Cue 1", Keys.A)
+        new Sounds(new XactSound(soundBank1, "Cue 1", Keys.A))
       };
 #else
 				cueInfos = new List<Sounds>

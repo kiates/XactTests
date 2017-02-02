@@ -124,7 +124,7 @@ Global Settings
         Reserved = 1;
         Read Only = 0;
         Time = 0;
-        Value = 1.000000;
+        Value = 0.000000;
         Initial Value = 1.000000;
         Min = 0.000000;
         Max = 4.000000;
@@ -238,50 +238,155 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::25eed2bb-b193-416c-a667-84fa751e9185;
+            Name = Sound::975c903f-ac77-4453-bed5-e90bf5b98625;
             Property = 0;
-            Sound = 0;
-            Line Color = 4291057000;
+            Sound = 1;
+            Line Color = 4279897569;
             Viewable = 1;
 
             Variable Entry
             {
-                Name = ReleaseTime;
+                Name = DopplerPitchScalar;
             }
 
             RPC Point
             {
-                X = 0.000000;
+                X = 1.333333;
                 Y = 0.000000;
                 Curve = 0;
             }
 
             RPC Point
             {
-                X = 2000.000000;
-                Y = -9600.000000;
+                X = 2.666667;
+                Y = 0.000000;
                 Curve = 0;
             }
         }
 
         RPC Curve
         {
-            Name = 2::a27893ac-6090-4a3d-9122-f629e2d582d7;
+            Name = Sound::06a60e78-0f48-4330-9a48-d4ff69dfdf6f;
+            Property = 1;
+            Sound = 1;
+            Line Color = 4282896988;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = DopplerPitchScalar;
+            }
+
+            RPC Point
+            {
+                X = 1.333333;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2.666667;
+                Y = 0.000000;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = 1::f3ec5d37-84f8-4379-b7ac-9297417a1604;
             Property = 0;
             Sound = 0;
-            Line Color = 4292450259;
+            Line Color = 4285508788;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = DopplerPitchScalar;
+            }
+
+            RPC Point
+            {
+                X = 1.333333;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2.666667;
+                Y = 0.000000;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = 2::cdca072f-5ca0-40a9-8ec8-bf83e1f9ae3b;
+            Property = 0;
+            Sound = 0;
+            Line Color = 4288935135;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = DopplerPitchScalar;
+            }
+
+            RPC Point
+            {
+                X = 1.333333;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 2.666667;
+                Y = 0.000000;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = 1::d964a639-1444-42ab-88ed-b51383f51424;
+            Property = 1;
+            Sound = 0;
+            Line Color = 4289755279;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = MyVariable1;
+            }
+
+            RPC Point
+            {
+                X = 33.333332;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 66.666664;
+                Y = 0.000000;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = 1::3cc5af36-ac10-4bc3-93dd-5f6d1a6ac85a;
+            Property = 1;
+            Sound = 0;
+            Line Color = 4286733840;
             Viewable = 1;
 
             Variable Entry
             {
                 Name = AttackTime;
-            }
-
-            RPC Point
-            {
-                X = 0.000000;
-                Y = -9600.000000;
-                Curve = 0;
             }
 
             RPC Point
@@ -290,59 +395,10 @@ Global Settings
                 Y = 0.000000;
                 Curve = 0;
             }
-        }
-
-        RPC Curve
-        {
-            Name = 2::f488e50c-de67-40c2-8ca0-dc216393cb77;
-            Property = 0;
-            Sound = 0;
-            Line Color = 4283729797;
-            Viewable = 1;
-
-            Variable Entry
-            {
-                Name = ReleaseTime;
-            }
-
-            RPC Point
-            {
-                X = 0.000000;
-                Y = 0.000000;
-                Curve = 0;
-            }
 
             RPC Point
             {
                 X = 10000.000000;
-                Y = -9600.000000;
-                Curve = 0;
-            }
-        }
-
-        RPC Curve
-        {
-            Name = 1::8dc49e6e-f0f1-4272-a91a-f8431c2f9a0e;
-            Property = 0;
-            Sound = 0;
-            Line Color = 4285961702;
-            Viewable = 1;
-
-            Variable Entry
-            {
-                Name = AttackTime;
-            }
-
-            RPC Point
-            {
-                X = 0.000000;
-                Y = -9600.000000;
-                Curve = 0;
-            }
-
-            RPC Point
-            {
-                X = 2000.000000;
                 Y = 0.000000;
                 Curve = 0;
             }
@@ -350,56 +406,84 @@ Global Settings
 
         RPC Curve
         {
-            Name = 1::ec26a6f1-6822-4787-adb1-fa2e9c8628de;
+            Name = 1::73bc6fec-6294-4e70-9e1c-083ed58980f9;
             Property = 1;
             Sound = 0;
-            Line Color = 4286913183;
+            Line Color = 4278644742;
             Viewable = 1;
 
             Variable Entry
             {
-                Name = AttackTime;
+                Name = Distance;
             }
 
             RPC Point
             {
-                X = 0.000000;
-                Y = -1200.000000;
+                X = 333333.343750;
+                Y = 0.000000;
                 Curve = 0;
             }
 
             RPC Point
             {
-                X = 5000.000000;
-                Y = 1200.000000;
+                X = 666666.687500;
+                Y = 0.000000;
                 Curve = 0;
             }
         }
 
         RPC Curve
         {
-            Name = 2::79f6e92f-f12e-4956-97d8-37016210ba94;
+            Name = 1::053bc19c-f166-4b57-b0af-ea07145ef5b1;
             Property = 1;
             Sound = 0;
-            Line Color = 4288282086;
+            Line Color = 4282099481;
             Viewable = 1;
 
             Variable Entry
             {
-                Name = AttackTime;
+                Name = SpeedOfSound;
             }
 
             RPC Point
             {
-                X = 10000.000000;
-                Y = 1200.000000;
+                X = 333333.343750;
+                Y = 0.000000;
                 Curve = 0;
             }
 
             RPC Point
             {
-                X = 15000.000000;
-                Y = -1200.000000;
+                X = 666666.687500;
+                Y = 0.000000;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = 1::d8d73282-c98a-4546-84ca-e5a8e80f32dd;
+            Property = 1;
+            Sound = 0;
+            Line Color = 4287527000;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = OrientationAngle;
+            }
+
+            RPC Point
+            {
+                X = -60.000000;
+                Y = 0.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 60.000000;
+                Y = 0.000000;
                 Curve = 0;
             }
         }
@@ -415,6 +499,12 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 0;
+    PC Bank Last Modified High = 0;
+    Header Last Modified Low = 0;
+    Header Last Modified High = 0;
     Bank Last Revised Low = 650524834;
     Bank Last Revised High = 30562360;
 
@@ -521,35 +611,6 @@ Sound Bank
             Volume = -3000;
             Use Filter = 0;
 
-            Set Volume Event
-            {
-                Event Header
-                {
-                    Timestamp = 0;
-                    Relative = 0;
-                    Random Recurrence = 0;
-                    Random Offset = 0;
-                }
-
-                Recurrence
-                {
-                    Count = 65535;
-                    Frequency = 1000;
-                    Beats Per Minute = 0;
-                    Beats Per Minute Frequency = 0.000000;
-                }
-
-                Equation
-                {
-                    Operator = 0;
-
-                    Operand
-                    {
-                        Constant = 0;
-                    }
-                }
-            }
-
             Play Wave Event
             {
                 Loop Count = 255;
@@ -579,22 +640,69 @@ Sound Bank
                 }
             }
 
-            RPC Curve Entry
+            Set Volume Event
             {
-                RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::25eed2bb-b193-416c-a667-84fa751e9185;
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Recurrence
+                {
+                    Count = 65535;
+                    Frequency = 1000;
+                    Beats Per Minute = 0;
+                    Beats Per Minute Frequency = 0.000000;
+                }
+
+                Equation
+                {
+                    Operator = 0;
+
+                    Operand
+                    {
+                        Constant = 0;
+                    }
+                }
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::8dc49e6e-f0f1-4272-a91a-f8431c2f9a0e;
+                RPC Curve Name = 1::f3ec5d37-84f8-4379-b7ac-9297417a1604;
             }
 
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1;
-                RPC Curve Name = 1::ec26a6f1-6822-4787-adb1-fa2e9c8628de;
+                RPC Curve Name = 1::d964a639-1444-42ab-88ed-b51383f51424;
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset 1;
+                RPC Curve Name = 1::3cc5af36-ac10-4bc3-93dd-5f6d1a6ac85a;
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset 1;
+                RPC Curve Name = 1::73bc6fec-6294-4e70-9e1c-083ed58980f9;
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset 1;
+                RPC Curve Name = 1::053bc19c-f166-4b57-b0af-ea07145ef5b1;
+            }
+
+            RPC Curve Entry
+            {
+                RPC Name = RPC Preset 1;
+                RPC Curve Name = 1::d8d73282-c98a-4546-84ca-e5a8e80f32dd;
             }
         }
 
@@ -634,19 +742,7 @@ Sound Bank
             RPC Curve Entry
             {
                 RPC Name = RPC Preset 1;
-                RPC Curve Name = 2::a27893ac-6090-4a3d-9122-f629e2d582d7;
-            }
-
-            RPC Curve Entry
-            {
-                RPC Name = RPC Preset 1;
-                RPC Curve Name = 2::f488e50c-de67-40c2-8ca0-dc216393cb77;
-            }
-
-            RPC Curve Entry
-            {
-                RPC Name = RPC Preset 1;
-                RPC Curve Name = 2::79f6e92f-f12e-4956-97d8-37016210ba94;
+                RPC Curve Name = 2::cdca072f-5ca0-40a9-8ec8-bf83e1f9ae3b;
             }
         }
     }
