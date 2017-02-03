@@ -235,8 +235,8 @@ namespace XactTests
 					new Sounds(new XactSound(soundBank1, "Cue 9 (Wind)", Keys.L)),
 					new Sounds(new XactSound(soundBank1, "Cue 10 (Pitch)", Keys.Z)),
 					new Sounds(new XactSound(soundBank1, "Cue 11 (Volume)", Keys.X)),
-					new Sounds(
-						new XnaSound(whiteNoiseSoundEffect, "Cue 10 (Pitch)", true, Keys.C)),
+					new Sounds(new XactSound(soundBank1, "Cue 12 (Sound Pitch)", Keys.V)),
+					new Sounds(new XnaSound(whiteNoiseSoundEffect, "Cue 10 (Pitch)", true, Keys.C)),
 					new Sounds(new XactSound(soundBank2, "Music Cue 1", Keys.Q)),
 					new Sounds(new XactSound(soundBank1, "Pitch Ramps", Keys.W)),
 					new Sounds(new XactSound(soundBank1, "Volume Ramps", Keys.E)),

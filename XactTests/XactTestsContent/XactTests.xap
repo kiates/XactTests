@@ -209,7 +209,7 @@ Global Settings
         Reserved = 1;
         Read Only = 0;
         Time = 0;
-        Value = 88.072021;
+        Value = 0.000000;
         Initial Value = 0.000000;
         Min = 0.000000;
         Max = 200.000000;
@@ -733,7 +733,7 @@ Global Settings
 
     RPC
     {
-        Name = RPC Preset;
+        Name = RPC Preset (Sound Pitch);
 
         RPC Curve
         {
@@ -750,15 +750,43 @@ Global Settings
 
             RPC Point
             {
-                X = 341.333344;
-                Y = 0.000000;
+                X = 1.000000;
+                Y = -1200.000000;
                 Curve = 0;
             }
 
             RPC Point
             {
-                X = 682.666687;
-                Y = 0.000000;
+                X = 4.000000;
+                Y = 1200.000000;
+                Curve = 0;
+            }
+        }
+
+        RPC Curve
+        {
+            Name = Sound::fd4136ec-aab6-4243-9ba4-5d72cc9fb064;
+            Property = 0;
+            Sound = 1;
+            Line Color = 4288306990;
+            Viewable = 1;
+
+            Variable Entry
+            {
+                Name = Distance;
+            }
+
+            RPC Point
+            {
+                X = 0.000000;
+                Y = -1200.000000;
+                Curve = 0;
+            }
+
+            RPC Point
+            {
+                X = 200.000000;
+                Y = 600.000000;
                 Curve = 0;
             }
         }
@@ -848,8 +876,8 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
-    Bank Last Revised Low = 1699062289;
-    Bank Last Revised High = 30571922;
+    Bank Last Revised Low = 1115792973;
+    Bank Last Revised High = 30572000;
 
     Wave
     {
@@ -3150,6 +3178,59 @@ Sound Bank
         }
     }
 
+    Sound
+    {
+        Name = Sound 12 (Sound Pitch);
+        Volume = -1200;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        RPC Entry
+        {
+            RPC Name = RPC Preset (Sound Pitch);
+        }
+
+        Track
+        {
+            Volume = 0;
+            Use Filter = 0;
+
+            Play Wave Event
+            {
+                Loop Count = 255;
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaker Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank 1;
+                    Bank Index = 0;
+                    Entry Name = Force Field 1;
+                    Entry Index = 1;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
     Cue
     {
         Name = Cue 1;
@@ -3556,6 +3637,26 @@ Sound Bank
         {
             Name = Sound 2 (Attack/Release 2 Tracks);
             Index = 17;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = Cue 12 (Sound Pitch);
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = Sound 12 (Sound Pitch);
+            Index = 18;
             Weight Min = 0;
             Weight Max = 255;
         }
