@@ -41,3 +41,5 @@ Solaroids.sln.ide/
 .sync/
 *.VC.opendb
 *.VC.db
+.vs/
+packages/
